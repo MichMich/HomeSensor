@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C0047D8F-AC4D-4DAE-809D-C6294C0001A8</string>
+	<key>IDESourceControlProjectName</key>
+	<string>HomeSensor</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C5C43577-9C92-49F1-8145-8CCE903AE5FF</key>
+		<string>https://github.com/MichMich/HomeSensor.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>HomeSensor/HomeSensor.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C5C43577-9C92-49F1-8145-8CCE903AE5FF</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/MichMich/HomeSensor.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C5C43577-9C92-49F1-8145-8CCE903AE5FF</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C5C43577-9C92-49F1-8145-8CCE903AE5FF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>HomeSensor</string>
+		</dict>
+	</array>
+</dict>
+</plist>
