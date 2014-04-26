@@ -21,14 +21,20 @@ function EventDispatcher() {
 		return event;
 	}
 
-	this.registeredEvents = function() {
+	this.registeredEvents = function(deviceToken) {
 
 		var events = [];
 
 		for (var i in registeredEvents) {
 			var event = registeredEvents[i];
-			
-			events.push(event.publicObject());
+
+			var eventObject = event.publicObject();
+			var subscribed = event.subscriberDetails(deviceToken);
+
+			eventObject.subscribed = subscribed.subscribed;
+			eventObject.repeat = subscribed.repeat;
+					
+			events.push(eventObject);
 		}
 
 		return events;

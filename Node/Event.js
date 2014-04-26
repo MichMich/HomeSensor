@@ -92,6 +92,17 @@ function Event() {
 		subscribers = newSubscribers;
 	}
 
+	this.subscriberDetails = function(deviceToken)
+	{
+		for (var i in subscribers) {
+			var subscriber = subscribers[i];
+			if (subscriber.deviceToken == deviceToken) {
+				return {subscribed:true, repeat:subscriber.repeat};
+			}
+		}
+		return {subscribed:false, repeat:null};
+	}
+
 	this.dumpSubscribers = function()
 	{
 		console.log('subscribers for '+this.identifier()+': ');

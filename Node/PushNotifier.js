@@ -2,7 +2,12 @@ var apn = require('apn');
 	
 
 function PushNotifier() {
-	var apnConnection = new apn.Connection({});
+	var options = {
+		errorCallback: function(err, notif) {
+			console.log('ERROR : ' + err + '\nNOTIFICATION : ' + notif);
+		}
+	};
+	var apnConnection = new apn.Connection(options);
 	
 	this.sendNotification = function (deviceToken,message,sound)
 	{
@@ -22,11 +27,10 @@ function PushNotifier() {
 		notification.alert = message;
 		notification.payload = {};
 
-		apnConnection.pushNotification(notification, myDevice, function() {
-			console.log('done');
-		});
+		apnConnection.pushNotification(notification, myDevice);
 
-		console.log('Notification: '+message+' - send to: '+myDevice);
+		console.log(myDevice);
+		console.log('Notification "'+message+'" sent to: '+myDevice);
 		//console.log(notification);
 	}
 }

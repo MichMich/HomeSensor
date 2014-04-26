@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C81749A190C1B39003982E2 /* Api.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C817499190C1B39003982E2 /* Api.m */; };
+		4C81749D190C1D48003982E2 /* RegisteredEventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C81749C190C1D48003982E2 /* RegisteredEventsTableViewController.m */; };
+		4C8174A0190C1FB1003982E2 /* PushNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C81749F190C1FB1003982E2 /* PushNotifier.m */; };
 		4CA85305190A7CA800455A09 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA85304190A7CA800455A09 /* Foundation.framework */; };
 		4CA85307190A7CA800455A09 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA85306190A7CA800455A09 /* CoreGraphics.framework */; };
 		4CA85309190A7CA800455A09 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA85308190A7CA800455A09 /* UIKit.framework */; };
@@ -21,7 +24,7 @@
 		4CA8532E190A7CA800455A09 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CA8532C190A7CA800455A09 /* InfoPlist.strings */; };
 		4CA85330190A7CA800455A09 /* HomeSensorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA8532F190A7CA800455A09 /* HomeSensorTests.m */; };
 		4CF57B40190A8AED005D6CD2 /* ready.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4CF57B3F190A8AED005D6CD2 /* ready.aiff */; };
-		4CF57B43190A95AC005D6CD2 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF57B42190A95AC005D6CD2 /* TableViewController.m */; };
+		4CF57B43190A95AC005D6CD2 /* RecentEventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF57B42190A95AC005D6CD2 /* RecentEventsTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C817498190C1B39003982E2 /* Api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Api.h; sourceTree = "<group>"; };
+		4C817499190C1B39003982E2 /* Api.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Api.m; sourceTree = "<group>"; };
+		4C81749B190C1D48003982E2 /* RegisteredEventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisteredEventsTableViewController.h; sourceTree = "<group>"; };
+		4C81749C190C1D48003982E2 /* RegisteredEventsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisteredEventsTableViewController.m; sourceTree = "<group>"; };
+		4C81749E190C1FB1003982E2 /* PushNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNotifier.h; sourceTree = "<group>"; };
+		4C81749F190C1FB1003982E2 /* PushNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushNotifier.m; sourceTree = "<group>"; };
 		4CA85301190A7CA800455A09 /* HomeSensor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeSensor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CA85304190A7CA800455A09 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4CA85306190A7CA800455A09 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,8 +62,8 @@
 		4CA8532D190A7CA800455A09 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4CA8532F190A7CA800455A09 /* HomeSensorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeSensorTests.m; sourceTree = "<group>"; };
 		4CF57B3F190A8AED005D6CD2 /* ready.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = ready.aiff; sourceTree = "<group>"; };
-		4CF57B41190A95AC005D6CD2 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
-		4CF57B42190A95AC005D6CD2 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		4CF57B41190A95AC005D6CD2 /* RecentEventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentEventsTableViewController.h; sourceTree = "<group>"; };
+		4CF57B42190A95AC005D6CD2 /* RecentEventsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentEventsTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,9 +126,15 @@
 				4CF57B3F190A8AED005D6CD2 /* ready.aiff */,
 				4CA85313190A7CA800455A09 /* AppDelegate.h */,
 				4CA85314190A7CA800455A09 /* AppDelegate.m */,
+				4C81749E190C1FB1003982E2 /* PushNotifier.h */,
+				4C81749F190C1FB1003982E2 /* PushNotifier.m */,
 				4CA85316190A7CA800455A09 /* Main.storyboard */,
-				4CF57B41190A95AC005D6CD2 /* TableViewController.h */,
-				4CF57B42190A95AC005D6CD2 /* TableViewController.m */,
+				4CF57B41190A95AC005D6CD2 /* RecentEventsTableViewController.h */,
+				4CF57B42190A95AC005D6CD2 /* RecentEventsTableViewController.m */,
+				4C81749B190C1D48003982E2 /* RegisteredEventsTableViewController.h */,
+				4C81749C190C1D48003982E2 /* RegisteredEventsTableViewController.m */,
+				4C817498190C1B39003982E2 /* Api.h */,
+				4C817499190C1B39003982E2 /* Api.m */,
 				4CA8531C190A7CA800455A09 /* Images.xcassets */,
 				4CA8530B190A7CA800455A09 /* Supporting Files */,
 			);
@@ -258,7 +273,10 @@
 			files = (
 				4CA85315190A7CA800455A09 /* AppDelegate.m in Sources */,
 				4CA85311190A7CA800455A09 /* main.m in Sources */,
-				4CF57B43190A95AC005D6CD2 /* TableViewController.m in Sources */,
+				4C81749D190C1D48003982E2 /* RegisteredEventsTableViewController.m in Sources */,
+				4C8174A0190C1FB1003982E2 /* PushNotifier.m in Sources */,
+				4C81749A190C1B39003982E2 /* Api.m in Sources */,
+				4CF57B43190A95AC005D6CD2 /* RecentEventsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

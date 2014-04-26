@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "PushNotifier.h"
 
 @implementation AppDelegate
 
@@ -21,10 +22,10 @@
 
 - (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     
+    [PushNotifier sharedInstance].deviceToken = deviceToken;
     
-    NSString * tokenAsString = [[[deviceToken description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]] stringByReplacingOccurrencesOfString:@" " withString:@""];
     
-    NSLog(@"Device Token: %@",tokenAsString);
+    NSLog(@"Device Token: %@",[[PushNotifier sharedInstance] deviceTokenAsString]);
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
