@@ -2,7 +2,9 @@ var apn = require('apn');
 	
 
 function PushNotifier() {
-	var options = {
+	var options = {		
+		cert: '/home/pi/node/HomeSensor/Node/cert.pem',
+		key: '/home/pi/node/HomeSensor/Node/key.pem',
 		errorCallback: function(err, notif) {
 			console.log('ERROR : ' + err + '\nNOTIFICATION : ' + notif);
 		}
