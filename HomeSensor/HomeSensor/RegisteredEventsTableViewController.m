@@ -25,6 +25,8 @@
     [super viewDidLoad];
     
     self.title = @"Config";
+
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.9 green:0.1 blue:0.1 alpha:1];
     
     [self getEvents];
     
@@ -36,10 +38,17 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self getEvents];
+}
 
 - (void)getEvents
 {
     NSLog(@"Get Events");
+    
+    [self.refreshControl beginRefreshing];
     
     NSString * tokenAsString = [[PushNotifier sharedInstance] deviceTokenAsString];
     
@@ -58,10 +67,11 @@
             NSLog(@"%@",self.events);
             
             [self.tableView reloadData];
+            [self.refreshControl endRefreshing];
         }
     }];
     
-    [self.refreshControl endRefreshing];
+    
 }
 
 
