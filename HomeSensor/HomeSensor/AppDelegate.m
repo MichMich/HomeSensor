@@ -9,6 +9,14 @@
 #import "AppDelegate.h"
 #import "PushNotifier.h"
 
+#import <AVFoundation/AVFoundation.h>
+
+@interface AppDelegate ()
+
+@property (strong, nonatomic) AVAudioPlayer *audioPlayer;
+
+@end
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -24,14 +32,47 @@
     
     [PushNotifier sharedInstance].deviceToken = deviceToken;
     
-    
     NSLog(@"Device Token: %@",[[PushNotifier sharedInstance] deviceTokenAsString]);
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
     NSLog(@"Fail to register for remote notifications: %@", [error localizedDescription]);
 }
-							
+
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    NSLog(@"%@",userInfo);
+
+    NSString *sound = [userInfo valueForKeyPath:@"aps.sound"];
+    
+    NSURL *soundURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@", [[NSBundle mainBundle] resourcePath], sound]];
+	
+    NSLog(@"%@", soundURL);
+    
+	NSError *error;
+	self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:&error];
+	[self.audioPlayer play];
+    
+    
+    
+    NSString *message = [userInfo valueForKeyPath:@"aps.alert"];
+    
+    [[[UIAlertView alloc] initWithTitle: message message:nil delegate: nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+
+    
+
+    
+    
+    /*
+    NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:nil ofType:@"aiff"];
+    NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
+    AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFileURL error:nil];
+     */
+
+    //[player play];
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

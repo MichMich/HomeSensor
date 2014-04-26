@@ -9,6 +9,8 @@
 #import "RecentEventsTableViewController.h"
 #import "Api.h"
 
+#import "YLMoment.h"
+
 @interface RecentEventsTableViewController ()
 
 @property (strong, nonatomic) NSArray *events;
@@ -24,6 +26,7 @@
     [super viewDidLoad];
  
     self.title = @"Home Sensor";
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.9 green:0.1 blue:0.1 alpha:1];
     
     [self getEvents];
     
@@ -35,14 +38,20 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self getEvents];
+}
+
 
 - (void)getEvents
 {
     NSLog(@"Get Events");
     
+    [self.refreshControl beginRefreshing];
     
     [Api performRequestWithUri:@"event_history" params:nil completionHandler:^(NSDictionary *response, NSError *error) {
-        
         if (error) {
             NSLog(@"%@", error);
         } else {
@@ -54,10 +63,11 @@
             NSLog(@"%@",self.events);
             
             [self.tableView reloadData];
+            [self.refreshControl endRefreshing];
         }
     }];
     
-    [self.refreshControl endRefreshing];
+    
 }
 
 
@@ -87,10 +97,12 @@
     NSDictionary *event = self.events[indexPath.row];
     
     NSString *description = [event valueForKeyPath:@"event.description"];
-    NSDate *timestamp = [NSDate dateWithTimeIntervalSince1970:[[event valueForKey:@"timestamp"] intValue]];
+    NSDate *timestamp = [NSDate dateWithTimeIntervalSince1970:[[event valueForKey:@"timestamp"] longLongValue]/1000];
+    
+    YLMoment *moment = [YLMoment momentWithDate:timestamp];
     
     cell.textLabel.text= description;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", timestamp];
+    cell.detailTextLabel.text = [moment fromNow];
     
     return cell;
 }

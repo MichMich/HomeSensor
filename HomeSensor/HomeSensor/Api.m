@@ -14,7 +14,7 @@
 {
     
     // Generate the URL
-    NSString *requestUrl = [NSString stringWithFormat:@"http://192.168.0.123:8081/api/%@", requestUri];
+    NSString *requestUrl = [NSString stringWithFormat:@"http://home.xonay.net:8081/api/%@", requestUri];
     
     // Create the connection
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:requestUrl]];

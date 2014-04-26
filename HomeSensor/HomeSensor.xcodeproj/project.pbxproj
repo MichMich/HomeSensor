@@ -23,6 +23,8 @@
 		4CA85326190A7CA800455A09 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA85308190A7CA800455A09 /* UIKit.framework */; };
 		4CA8532E190A7CA800455A09 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CA8532C190A7CA800455A09 /* InfoPlist.strings */; };
 		4CA85330190A7CA800455A09 /* HomeSensorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA8532F190A7CA800455A09 /* HomeSensorTests.m */; };
+		4CC08A1E190C44060061FA78 /* YLMomentRelativeTimeLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CC08A12190C44060061FA78 /* YLMomentRelativeTimeLocalizable.strings */; };
+		4CC08A1F190C44060061FA78 /* YLMoment.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC08A1D190C44060061FA78 /* YLMoment.m */; };
 		4CF57B40190A8AED005D6CD2 /* ready.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4CF57B3F190A8AED005D6CD2 /* ready.aiff */; };
 		4CF57B43190A95AC005D6CD2 /* RecentEventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF57B42190A95AC005D6CD2 /* RecentEventsTableViewController.m */; };
 /* End PBXBuildFile section */
@@ -61,6 +63,17 @@
 		4CA8532B190A7CA800455A09 /* HomeSensorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HomeSensorTests-Info.plist"; sourceTree = "<group>"; };
 		4CA8532D190A7CA800455A09 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4CA8532F190A7CA800455A09 /* HomeSensorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeSensorTests.m; sourceTree = "<group>"; };
+		4CC08A13190C44060061FA78 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/YLMomentRelativeTimeLocalizable.strings; sourceTree = "<group>"; };
+		4CC08A14190C44060061FA78 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/YLMomentRelativeTimeLocalizable.strings; sourceTree = "<group>"; };
+		4CC08A15190C44060061FA78 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/YLMomentRelativeTimeLocalizable.strings; sourceTree = "<group>"; };
+		4CC08A16190C44060061FA78 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/YLMomentRelativeTimeLocalizable.strings; sourceTree = "<group>"; };
+		4CC08A17190C44060061FA78 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/YLMomentRelativeTimeLocalizable.strings; sourceTree = "<group>"; };
+		4CC08A18190C44060061FA78 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/YLMomentRelativeTimeLocalizable.strings; sourceTree = "<group>"; };
+		4CC08A19190C44060061FA78 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/YLMomentRelativeTimeLocalizable.strings; sourceTree = "<group>"; };
+		4CC08A1A190C44060061FA78 /* sq */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sq; path = sq.lproj/YLMomentRelativeTimeLocalizable.strings; sourceTree = "<group>"; };
+		4CC08A1B190C44060061FA78 /* zh */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh; path = zh.lproj/YLMomentRelativeTimeLocalizable.strings; sourceTree = "<group>"; };
+		4CC08A1C190C44060061FA78 /* YLMoment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLMoment.h; sourceTree = "<group>"; };
+		4CC08A1D190C44060061FA78 /* YLMoment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLMoment.m; sourceTree = "<group>"; };
 		4CF57B3F190A8AED005D6CD2 /* ready.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = ready.aiff; sourceTree = "<group>"; };
 		4CF57B41190A95AC005D6CD2 /* RecentEventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentEventsTableViewController.h; sourceTree = "<group>"; };
 		4CF57B42190A95AC005D6CD2 /* RecentEventsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentEventsTableViewController.m; sourceTree = "<group>"; };
@@ -123,6 +136,9 @@
 		4CA8530A190A7CA800455A09 /* HomeSensor */ = {
 			isa = PBXGroup;
 			children = (
+				4CC08A11190C44060061FA78 /* Localization */,
+				4CC08A1C190C44060061FA78 /* YLMoment.h */,
+				4CC08A1D190C44060061FA78 /* YLMoment.m */,
 				4CF57B3F190A8AED005D6CD2 /* ready.aiff */,
 				4CA85313190A7CA800455A09 /* AppDelegate.h */,
 				4CA85314190A7CA800455A09 /* AppDelegate.m */,
@@ -168,6 +184,14 @@
 				4CA8532C190A7CA800455A09 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4CC08A11190C44060061FA78 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				4CC08A12190C44060061FA78 /* YLMomentRelativeTimeLocalizable.strings */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +256,14 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
+				es,
+				fr,
+				ja,
+				nl,
+				pt,
+				sq,
+				zh,
 			);
 			mainGroup = 4CA852F8190A7CA700455A09;
 			productRefGroup = 4CA85302190A7CA800455A09 /* Products */;
@@ -251,6 +283,7 @@
 			files = (
 				4CA8531D190A7CA800455A09 /* Images.xcassets in Resources */,
 				4CA8530F190A7CA800455A09 /* InfoPlist.strings in Resources */,
+				4CC08A1E190C44060061FA78 /* YLMomentRelativeTimeLocalizable.strings in Resources */,
 				4CA85318190A7CA800455A09 /* Main.storyboard in Resources */,
 				4CF57B40190A8AED005D6CD2 /* ready.aiff in Resources */,
 			);
@@ -276,6 +309,7 @@
 				4C81749D190C1D48003982E2 /* RegisteredEventsTableViewController.m in Sources */,
 				4C8174A0190C1FB1003982E2 /* PushNotifier.m in Sources */,
 				4C81749A190C1B39003982E2 /* Api.m in Sources */,
+				4CC08A1F190C44060061FA78 /* YLMoment.m in Sources */,
 				4CF57B43190A95AC005D6CD2 /* RecentEventsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,6 +355,22 @@
 				4CA8532D190A7CA800455A09 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4CC08A12190C44060061FA78 /* YLMomentRelativeTimeLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CC08A13190C44060061FA78 /* de */,
+				4CC08A14190C44060061FA78 /* en */,
+				4CC08A15190C44060061FA78 /* es */,
+				4CC08A16190C44060061FA78 /* fr */,
+				4CC08A17190C44060061FA78 /* ja */,
+				4CC08A18190C44060061FA78 /* nl */,
+				4CC08A19190C44060061FA78 /* pt */,
+				4CC08A1A190C44060061FA78 /* sq */,
+				4CC08A1B190C44060061FA78 /* zh */,
+			);
+			name = YLMomentRelativeTimeLocalizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

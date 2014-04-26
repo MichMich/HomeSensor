@@ -49,11 +49,11 @@
             </objects>
             <point key="canvasLocation" x="2628" y="-434"/>
         </scene>
-        <!--Navigation Controller - Recent Events-->
+        <!--Navigation Controller-->
         <scene sceneID="UEf-Pg-hZa">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tiL-IH-R8g" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Recent Events" id="AFN-Tl-MBz"/>
+                    <tabBarItem key="tabBarItem" systemItem="recents" id="AFN-Tl-MBz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5Bb-c5-fBc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -113,11 +113,11 @@
             </objects>
             <point key="canvasLocation" x="2636" y="228"/>
         </scene>
-        <!--Navigation Controller - Config-->
+        <!--Navigation Controller-->
         <scene sceneID="l4S-VH-52f">
             <objects>
                 <navigationController definesPresentationContext="YES" id="WV0-C2-Xhx" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Config" id="TL9-b6-yId"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="TL9-b6-yId"/>
                     <navigationItem key="navigationItem" id="uZE-rf-1jb"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aL9-Iz-m7d">
                         <autoresizingMask key="autoresizingMask"/>
