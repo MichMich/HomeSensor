@@ -69,6 +69,13 @@ function EventDispatcher() {
 			return false;
 		}
 		eventHistory.push({event: this.getEvent(identifier), timestamp: Date.now()});
+
+		//cleanup event history
+		if (eventHistory.length > 250) {
+			newEventHistory = eventHistory.slice(eventHistory.length - 250);
+			eventHistory = newEventHistory;
+		}
+
 		event.fire();
 		return true;
 	}
