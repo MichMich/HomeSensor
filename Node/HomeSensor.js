@@ -9,14 +9,14 @@ var socket = require("socket.io-client");
 
 var EventDispatcher = require("./EventDispatcher");
 
-EventDispatcher.registerEvent('app_restart', 'PushNotifier restarted.', false, 'app_icon.png');
-EventDispatcher.registerEvent('dishwasher_ready', 'Vaatwasser is klaar.', 'ready.aiff', 'dishwasher.png');
-EventDispatcher.registerEvent('dishwasher_reset', 'Vaatwasser is gereset.', false, 'dishwasher.png');
-EventDispatcher.registerEvent('alarm_door', 'Voordeur geopend.', false, 'door.png');
-EventDispatcher.registerEvent('alarm_hallway', 'Beweging in de gang.', false, 'hallway.png');
-EventDispatcher.registerEvent('alarm_livingroom', 'Beweging in de woonkamer.', false, 'livingroom.png');
-EventDispatcher.registerEvent('alarm_bedroom', 'Beweging in de slaapkamer.', false, 'slaapkamer.png');
-EventDispatcher.registerEvent('alarm_spareroom', 'Beweging in de zijkamer.', false, 'zijkamer.png');
+EventDispatcher.registerEvent('app_restart', 'HomeSensor restarted.', 'app_restart.aiff', 'app_restart.png');
+EventDispatcher.registerEvent('dishwasher_ready', 'Vaatwasser is klaar.', 'dishwasher_ready.aiff', 'dishwasher_ready.png');
+EventDispatcher.registerEvent('dishwasher_reset', 'Vaatwasser is gereset.', 'dishwasher_reset.aiff', 'dishwasher_reset.png');
+EventDispatcher.registerEvent('alarm_door', 'Voordeur geopend.', 'alarm_door.aiff', 'alarm_door.png');
+EventDispatcher.registerEvent('alarm_hallway', 'Beweging in de gang.', 'alarm_hallway.aiff', 'alarm_hallway.png');
+EventDispatcher.registerEvent('alarm_livingroom', 'Beweging in de woonkamer.', 'alarm_livingroom.aiff', 'alarm_livingroom.png');
+EventDispatcher.registerEvent('alarm_bedroom', 'Beweging in de slaapkamer.', 'alarm_bedroom.aiff', 'alarm_bedroom.png');
+EventDispatcher.registerEvent('alarm_spareroom', 'Beweging in de zijkamer.', 'alarm_spareroom.aiff', 'alarm_spareroom.png');
 
 
 EventDispatcher.getEvent('app_restart').subscribe('b6d24f7f0f7047e598cec35279b1748986033f71b2200a900637dfbed4359c8e', false);
