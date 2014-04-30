@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C30FA6F190D31360026F961 /* alarm_bedroom.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4C30FA67190D31360026F961 /* alarm_bedroom.aiff */; };
+		4C30FA70190D31360026F961 /* alarm_door.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4C30FA68190D31360026F961 /* alarm_door.aiff */; };
+		4C30FA71190D31360026F961 /* alarm_hallway.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4C30FA69190D31360026F961 /* alarm_hallway.aiff */; };
+		4C30FA72190D31360026F961 /* alarm_livingroom.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4C30FA6A190D31360026F961 /* alarm_livingroom.aiff */; };
+		4C30FA73190D31360026F961 /* alarm_spareroom.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4C30FA6B190D31360026F961 /* alarm_spareroom.aiff */; };
+		4C30FA74190D31360026F961 /* app_restart.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4C30FA6C190D31360026F961 /* app_restart.aiff */; };
+		4C30FA75190D31360026F961 /* dishwasher_ready.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4C30FA6D190D31360026F961 /* dishwasher_ready.aiff */; };
+		4C30FA76190D31360026F961 /* dishwasher_reset.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4C30FA6E190D31360026F961 /* dishwasher_reset.aiff */; };
 		4C81749A190C1B39003982E2 /* Api.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C817499190C1B39003982E2 /* Api.m */; };
 		4C81749D190C1D48003982E2 /* RegisteredEventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C81749C190C1D48003982E2 /* RegisteredEventsTableViewController.m */; };
 		4C8174A0190C1FB1003982E2 /* PushNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C81749F190C1FB1003982E2 /* PushNotifier.m */; };
@@ -25,7 +33,6 @@
 		4CA85330190A7CA800455A09 /* HomeSensorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA8532F190A7CA800455A09 /* HomeSensorTests.m */; };
 		4CC08A1E190C44060061FA78 /* YLMomentRelativeTimeLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CC08A12190C44060061FA78 /* YLMomentRelativeTimeLocalizable.strings */; };
 		4CC08A1F190C44060061FA78 /* YLMoment.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC08A1D190C44060061FA78 /* YLMoment.m */; };
-		4CF57B40190A8AED005D6CD2 /* ready.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4CF57B3F190A8AED005D6CD2 /* ready.aiff */; };
 		4CF57B43190A95AC005D6CD2 /* RecentEventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF57B42190A95AC005D6CD2 /* RecentEventsTableViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +47,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C30FA67190D31360026F961 /* alarm_bedroom.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = alarm_bedroom.aiff; sourceTree = "<group>"; };
+		4C30FA68190D31360026F961 /* alarm_door.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = alarm_door.aiff; sourceTree = "<group>"; };
+		4C30FA69190D31360026F961 /* alarm_hallway.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = alarm_hallway.aiff; sourceTree = "<group>"; };
+		4C30FA6A190D31360026F961 /* alarm_livingroom.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = alarm_livingroom.aiff; sourceTree = "<group>"; };
+		4C30FA6B190D31360026F961 /* alarm_spareroom.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = alarm_spareroom.aiff; sourceTree = "<group>"; };
+		4C30FA6C190D31360026F961 /* app_restart.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = app_restart.aiff; sourceTree = "<group>"; };
+		4C30FA6D190D31360026F961 /* dishwasher_ready.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = dishwasher_ready.aiff; sourceTree = "<group>"; };
+		4C30FA6E190D31360026F961 /* dishwasher_reset.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = dishwasher_reset.aiff; sourceTree = "<group>"; };
 		4C817498190C1B39003982E2 /* Api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Api.h; sourceTree = "<group>"; };
 		4C817499190C1B39003982E2 /* Api.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Api.m; sourceTree = "<group>"; };
 		4C81749B190C1D48003982E2 /* RegisteredEventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisteredEventsTableViewController.h; sourceTree = "<group>"; };
@@ -74,7 +89,6 @@
 		4CC08A1B190C44060061FA78 /* zh */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh; path = zh.lproj/YLMomentRelativeTimeLocalizable.strings; sourceTree = "<group>"; };
 		4CC08A1C190C44060061FA78 /* YLMoment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLMoment.h; sourceTree = "<group>"; };
 		4CC08A1D190C44060061FA78 /* YLMoment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLMoment.m; sourceTree = "<group>"; };
-		4CF57B3F190A8AED005D6CD2 /* ready.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = ready.aiff; sourceTree = "<group>"; };
 		4CF57B41190A95AC005D6CD2 /* RecentEventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentEventsTableViewController.h; sourceTree = "<group>"; };
 		4CF57B42190A95AC005D6CD2 /* RecentEventsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentEventsTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,6 +117,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C30FA66190D31240026F961 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				4C30FA67190D31360026F961 /* alarm_bedroom.aiff */,
+				4C30FA68190D31360026F961 /* alarm_door.aiff */,
+				4C30FA69190D31360026F961 /* alarm_hallway.aiff */,
+				4C30FA6A190D31360026F961 /* alarm_livingroom.aiff */,
+				4C30FA6B190D31360026F961 /* alarm_spareroom.aiff */,
+				4C30FA6C190D31360026F961 /* app_restart.aiff */,
+				4C30FA6D190D31360026F961 /* dishwasher_ready.aiff */,
+				4C30FA6E190D31360026F961 /* dishwasher_reset.aiff */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
 		4CA852F8190A7CA700455A09 = {
 			isa = PBXGroup;
 			children = (
@@ -139,7 +168,7 @@
 				4CC08A11190C44060061FA78 /* Localization */,
 				4CC08A1C190C44060061FA78 /* YLMoment.h */,
 				4CC08A1D190C44060061FA78 /* YLMoment.m */,
-				4CF57B3F190A8AED005D6CD2 /* ready.aiff */,
+				4C30FA66190D31240026F961 /* Sounds */,
 				4CA85313190A7CA800455A09 /* AppDelegate.h */,
 				4CA85314190A7CA800455A09 /* AppDelegate.m */,
 				4C81749E190C1FB1003982E2 /* PushNotifier.h */,
@@ -283,9 +312,16 @@
 			files = (
 				4CA8531D190A7CA800455A09 /* Images.xcassets in Resources */,
 				4CA8530F190A7CA800455A09 /* InfoPlist.strings in Resources */,
+				4C30FA6F190D31360026F961 /* alarm_bedroom.aiff in Resources */,
+				4C30FA72190D31360026F961 /* alarm_livingroom.aiff in Resources */,
+				4C30FA71190D31360026F961 /* alarm_hallway.aiff in Resources */,
+				4C30FA76190D31360026F961 /* dishwasher_reset.aiff in Resources */,
+				4C30FA74190D31360026F961 /* app_restart.aiff in Resources */,
+				4C30FA75190D31360026F961 /* dishwasher_ready.aiff in Resources */,
+				4C30FA70190D31360026F961 /* alarm_door.aiff in Resources */,
 				4CC08A1E190C44060061FA78 /* YLMomentRelativeTimeLocalizable.strings in Resources */,
 				4CA85318190A7CA800455A09 /* Main.storyboard in Resources */,
-				4CF57B40190A8AED005D6CD2 /* ready.aiff in Resources */,
+				4C30FA73190D31360026F961 /* alarm_spareroom.aiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
