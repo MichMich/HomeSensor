@@ -25,6 +25,7 @@ function PushNotifier() {
 
 		notification.badge = 0;
 		notification.sound = (sound) ? sound : "default";
+		notification.expiry = Math.floor(Date.now() / 1000) + 3600; //1 hour from now
 		notification.alert = message;
 		notification.payload = {};
 
