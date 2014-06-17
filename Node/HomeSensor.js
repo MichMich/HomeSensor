@@ -12,6 +12,8 @@ var EventDispatcher = require("./EventDispatcher");
 EventDispatcher.registerEvent('app_restart', 'HomeSensor restarted.', 'app_restart.aiff', 'app_restart.png');
 EventDispatcher.registerEvent('dishwasher_ready', 'Vaatwasser is klaar.', 'dishwasher_ready.aiff', 'dishwasher_ready.png');
 EventDispatcher.registerEvent('dishwasher_reset', 'Vaatwasser is gereset.', 'dishwasher_reset.aiff', 'dishwasher_reset.png');
+EventDispatcher.registerEvent('plant_needswater', 'Plant heeft water nodig.', 'plant_needswater.aiff', 'plant_needswater.png');
+EventDispatcher.registerEvent('plant_haswater', 'Plant heeft voldoende water.', 'plant_haswater.aiff', 'plant_haswater.png');
 EventDispatcher.registerEvent('alarm_door', 'Voordeur geopend.', 'alarm_door.aiff', 'alarm_door.png');
 EventDispatcher.registerEvent('alarm_hallway', 'Beweging in de gang.', 'alarm_hallway.aiff', 'alarm_hallway.png');
 EventDispatcher.registerEvent('alarm_livingroom', 'Beweging in de woonkamer.', 'alarm_livingroom.aiff', 'alarm_livingroom.png');
@@ -27,12 +29,19 @@ EventDispatcher.fireEvent('app_restart');
 
 /* Xbee Monitor */
 
-var xbee = socket.connect('http://rpi-development.local:8080');
+var xbee = socket.connect('http://localhost:8082');
 xbee.on('dishwasher', function (dishwasherDone) {
 	if (dishwasherDone) {
 		EventDispatcher.fireEvent('dishwasher_ready');
 	} else {
 		EventDispatcher.fireEvent('dishwasher_reset');
+	}
+});
+xbee.on('plantNeedsWater', function (plantNeedsWater) {
+	if (plantNeedsWater) {
+		EventDispatcher.fireEvent('plant_needswater');
+	} else {
+		EventDispatcher.fireEvent('plant_haswater');
 	}
 });
 
