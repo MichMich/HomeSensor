@@ -22,7 +22,7 @@ class SensorManager: NSObject, MQTTSessionDelegate, DeviceDelegateProtocol {
 	override init() {
 		super.init()
 		
-		print("Init SensorManager!")
+		print("Init SensorManager!" , self)
 		
 		mqttSession.delegate = self
 		connect()
@@ -37,14 +37,17 @@ class SensorManager: NSObject, MQTTSessionDelegate, DeviceDelegateProtocol {
 	}
 	
 	func topicForSensor(sensor:Sensor, onDevice device:Device) -> String {
-		///device/alarm/sensor/sensor8
-		
 		return "/device/\(device.identifier)/sensor/\(sensor.identifier)"
+	}
+	
+	func topicForDeviceConnection(device:Device) -> String {
+		return "/device/\(device.identifier)/connected"
 	}
 	
 	func connect() {
 		if mqttSession.status != MQTTSessionStatus.Connected && mqttSession.status != MQTTSessionStatus.Connecting {
-			mqttSession.connectAndWaitToHost(Config.MQTTHostname, port: Config.MQTTPort, usingSSL: false)
+			mqttSession.connectToHost(Config.MQTTHostname, port: Config.MQTTPort, usingSSL: false)
+			
 		}
 	}
 	
@@ -56,6 +59,14 @@ extension SensorManager {
 	func newMessage(session: MQTTSession!, data: NSData!, onTopic topic: String!, qos: MQTTQosLevel, retained: Bool, mid: UInt32) {
 		if let topic = topic, let string = String(data: data, encoding: NSUTF8StringEncoding) {
 			for device in devices {
+				
+				let deviceConnectedTopic = topicForDeviceConnection(device)
+				if deviceConnectedTopic == topic {
+					device.receivedNewConnectionValue(string)
+				} else if "\(deviceConnectedTopic)/timestamp" == topic {
+					device.receivedNewConnectionTimestamp(string)
+				}
+				
 				for sensor in device.sensors {
 					let sensorTopic = topicForSensor(sensor, onDevice: device)
 					if sensorTopic == topic {
@@ -65,7 +76,6 @@ extension SensorManager {
 					}
 				}
 			}
-			
 		}
 	}
 	
@@ -73,16 +83,43 @@ extension SensorManager {
 		connect()
 	}
 	
+	func connected(session: MQTTSession!) {
+		subscribeAll()
+		print("Connected to MQTT server.")
+	}
+
+	private func subscribeSensor(sensor:Sensor, forDevice device:Device) {
+		let topic = topicForSensor(sensor, onDevice: device)
+		mqttSession.subscribeToTopic(topic, atLevel: MQTTQosLevel.AtLeastOnce)
+		mqttSession.subscribeToTopic("\(topic)/timestamp", atLevel: MQTTQosLevel.AtLeastOnce)
+	}
+	
+	private func subscribeDevice(device:Device) {
+		let topic = topicForDeviceConnection(device)
+		mqttSession.subscribeToTopic(topic, atLevel: MQTTQosLevel.AtLeastOnce)
+		mqttSession.subscribeToTopic("\(topic)/timestamp", atLevel: MQTTQosLevel.AtLeastOnce)
+	}
+	
+	private func subscribeAll() {
+		for device in devices {
+			subscribeDevice(device)
+			for sensor in device.sensors {
+				subscribeSensor(sensor, forDevice: device)
+			}
+		}
+	}
 }
 
 protocol SensorManagerDelegateProtocol {
 	func sensorManagerDeviceAdded(sensorManager:SensorManager, device:Device)
+	func sensorManagerDeviceConnectionChanged(sensorManager:SensorManager, device:Device)
 	func sensorManagerDeviceSensorAdded(sensorManager:SensorManager, device:Device, sensor:Sensor)
 	func sensorManagerDeviceSensorUpdated(sensorManager:SensorManager, device:Device, sensor:Sensor, state:Bool)
 }
 
 extension SensorManagerDelegateProtocol {
 	func sensorManagerDeviceAdded(sensorManager:SensorManager, device:Device) {}
+	func sensorManagerDeviceConnectionChanged(sensorManager:SensorManager, device:Device) {}
 	func sensorManagerDeviceSensorAdded(sensorManager:SensorManager, device:Device, sensor:Sensor) {}
 	func sensorManagerDeviceSensorUpdated(sensorManager:SensorManager, device:Device, sensor:Sensor, state:Bool) {}
 }
@@ -91,11 +128,12 @@ extension SensorManagerDelegateProtocol {
 // MARK: DeviceDelegateProtocol Methods 
 extension SensorManager {
 	
+	func deviceConnectionChanged(device:Device) {
+		delegate?.sensorManagerDeviceConnectionChanged(self, device: device)
+	}
+	
 	func deviceSensorAdded(device: Device, sensor: Sensor) {
-		let topic = topicForSensor(sensor, onDevice: device)
-		mqttSession.subscribeToTopic(topic, atLevel: MQTTQosLevel.AtLeastOnce)
-		mqttSession.subscribeToTopic("\(topic)/timestamp", atLevel: MQTTQosLevel.AtLeastOnce)
-
+		subscribeSensor(sensor, forDevice: device)
 		delegate?.sensorManagerDeviceSensorAdded(self, device: device, sensor: sensor)
 	}
 	

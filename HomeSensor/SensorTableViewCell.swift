@@ -68,10 +68,10 @@ class SensorTableViewCell: UITableViewCell {
 	
 	func updateTimestampLabel() {
 		if let timestamp = timestamp, let textString = timestamp.toRelativeString(abbreviated: false, maxUnits: 1) {
-			detailTextLabel?.text = "\(textString) ago."
+			detailTextLabel?.text = (textString != "just now") ? "\(textString) ago." : "\(textString)."
 		}
 		
-		timestampUpdateTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "updateTimestampLabel", userInfo: nil, repeats: false)
+		timestampUpdateTimer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "updateTimestampLabel", userInfo: nil, repeats: false)
 	}
 
 }

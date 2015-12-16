@@ -39,7 +39,6 @@ class Sensor {
 		let dateFormatter = NSDateFormatter()
 		dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
 		timestamp  = dateFormatter.dateFromString(timeString)
-		print(timeString, timestamp)
 	}
 }
 

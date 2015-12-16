@@ -30,11 +30,12 @@ class TableViewController: UITableViewController, SensorManagerDelegateProtocol 
 		let dishwasher = Device(name: "Dishwasher", identifier: "dishwasher", forSensorManager: SensorManager.sharedInstance)
 		
 		dishwasher.addSensor(Sensor(name: "Ready", identifier: "ready"))
+		
+		sensorManager.mqttSession.addObserver(self, forKeyPath: "status", options: NSKeyValueObservingOptions.New, context: nil)
     }
 
 	override func viewWillAppear(animated: Bool) {
 		super.viewWillAppear(animated)
-		sensorManager.connect()
 	}
 
     // MARK: - Table view data source
@@ -51,6 +52,16 @@ class TableViewController: UITableViewController, SensorManagerDelegateProtocol 
 	
 	override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 		return sensorManager.devices[section].name
+	}
+	
+	override func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+		let connectionString = sensorManager.devices[section].connected ? "Connected" : "Disconnected"
+		if let timestamp = sensorManager.devices[section].timestamp, let textString = timestamp.toRelativeString(abbreviated: false, maxUnits: 1) {
+			let timestampString = (textString != "just now") ? "\(textString) ago." : "\(textString)."
+			
+			return "\(connectionString) \(timestampString)"
+		}
+		return connectionString
 	}
 	
 	override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -74,6 +85,30 @@ class TableViewController: UITableViewController, SensorManagerDelegateProtocol 
 			}
 		}
 	}
+	
+	override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+		
+		var statusString = "Unknown"
+		
+		switch sensorManager.mqttSession.status {
+			case .Created:
+				statusString = "Created"
+			case .Connecting:
+				statusString = "Connecting"
+			case .Connected:
+				statusString = "Connected"
+			case .Disconnecting:
+				statusString = "Disconnecting"
+			case .Closed:
+				statusString = "Closed"
+			case .Error:
+				statusString = "Error"
+		}
+		
+		print("Connection status: ", statusString)
+		
+		title = "HomeSensor \(statusString)"
+	}
 
 }
 
@@ -82,16 +117,20 @@ extension TableViewController {
 	
 	func sensorManagerDeviceAdded(sensorManager: SensorManager, device: Device) {
 		tableView.reloadData()
-		print("Sensor manager: \(sensorManager) - Device added: \(device.name)")
+		//print("Sensor manager: \(sensorManager) - Device added: \(device.name)")
+	}
+	
+	func sensorManagerDeviceConnectionChanged(sensorManager: SensorManager, device: Device) {
+		tableView.reloadData()
 	}
 	
 	func sensorManagerDeviceSensorAdded(sensorManager: SensorManager, device: Device, sensor: Sensor) {
 		tableView.reloadData()
-		print("Sensor manager: \(sensorManager) - Device: \(device.name) - Sensor added: \(sensor.name)")
+		//print("Sensor manager: \(sensorManager) - Device: \(device.name) - Sensor added: \(sensor.name)")
 	}
 	
 	func sensorManagerDeviceSensorUpdated(sensorManager: SensorManager, device: Device, sensor: Sensor, state: Bool) {
 		reloadSensor(sensor)
-		print("Sensor manager: \(sensorManager) - Device: \(device.name) - Sensor: \(sensor.name) - Value: \(state)")
+		//print("Sensor manager: \(sensorManager) - Device: \(device.name) - Sensor: \(sensor.name) - Value: \(state)")
 	}
 }

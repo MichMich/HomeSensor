@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4C5BBE721C1B441B001B1A8D /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5BBE711C1B441B001B1A8D /* TableViewController.swift */; };
 		4C5BBE741C1B60A1001B1A8D /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C5BBE731C1B60A1001B1A8D /* SwiftDate.framework */; };
-		4C5BBE751C1B615D001B1A8D /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C5BBE731C1B60A1001B1A8D /* SwiftDate.framework */; };
 		4C5BBE761C1B615D001B1A8D /* SwiftDate.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4C5BBE731C1B60A1001B1A8D /* SwiftDate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4C6434341C20915D002E557E /* SensorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6434331C20915D002E557E /* SensorTableViewCell.swift */; };
 		4C6434361C209637002E557E /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6434351C209637002E557E /* Config.swift */; };
@@ -86,7 +85,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C5BBE741C1B60A1001B1A8D /* SwiftDate.framework in Frameworks */,
-				4C5BBE751C1B615D001B1A8D /* SwiftDate.framework in Frameworks */,
 				4CB79CAC1C1215D100514E27 /* MQTTClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -231,7 +229,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Michael Teeuw";
 				TargetAttributes = {
 					4CB79C671C12094200514E27 = {
