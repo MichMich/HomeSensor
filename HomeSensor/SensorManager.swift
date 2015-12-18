@@ -112,14 +112,14 @@ extension SensorManager {
 
 protocol SensorManagerDelegateProtocol {
 	func sensorManagerDeviceAdded(sensorManager:SensorManager, device:Device)
-	func sensorManagerDeviceConnectionChanged(sensorManager:SensorManager, device:Device)
+	func sensorManagerDeviceConnectionChanged(sensorManager:SensorManager, device:Device, connected:Bool)
 	func sensorManagerDeviceSensorAdded(sensorManager:SensorManager, device:Device, sensor:Sensor)
 	func sensorManagerDeviceSensorUpdated(sensorManager:SensorManager, device:Device, sensor:Sensor, state:Bool)
 }
 
 extension SensorManagerDelegateProtocol {
 	func sensorManagerDeviceAdded(sensorManager:SensorManager, device:Device) {}
-	func sensorManagerDeviceConnectionChanged(sensorManager:SensorManager, device:Device) {}
+	func sensorManagerDeviceConnectionChanged(sensorManager:SensorManager, device:Device, connected:Bool) {}
 	func sensorManagerDeviceSensorAdded(sensorManager:SensorManager, device:Device, sensor:Sensor) {}
 	func sensorManagerDeviceSensorUpdated(sensorManager:SensorManager, device:Device, sensor:Sensor, state:Bool) {}
 }
@@ -129,7 +129,7 @@ extension SensorManagerDelegateProtocol {
 extension SensorManager {
 	
 	func deviceConnectionChanged(device:Device) {
-		delegate?.sensorManagerDeviceConnectionChanged(self, device: device)
+		delegate?.sensorManagerDeviceConnectionChanged(self, device: device, connected: device.connected)
 	}
 	
 	func deviceSensorAdded(device: Device, sensor: Sensor) {

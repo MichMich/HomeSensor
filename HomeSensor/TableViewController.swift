@@ -55,6 +55,10 @@ class TableViewController: UITableViewController, SensorManagerDelegateProtocol 
 	}
 	
 	override func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+		
+		tableView.footerViewForSection(section)?.textLabel?.font = UIFont.systemFontOfSize(10)
+		
+		
 		let connectionString = sensorManager.devices[section].connected ? "Connected" : "Disconnected"
 		if let timestamp = sensorManager.devices[section].timestamp, let textString = timestamp.toRelativeString(abbreviated: false, maxUnits: 1) {
 			let timestampString = (textString != "just now") ? "\(textString) ago." : "\(textString)."
@@ -117,20 +121,20 @@ extension TableViewController {
 	
 	func sensorManagerDeviceAdded(sensorManager: SensorManager, device: Device) {
 		tableView.reloadData()
-		//print("Sensor manager: \(sensorManager) - Device added: \(device.name)")
+		print("Sensor manager: \(sensorManager) - Device added: \(device.name)")
 	}
 	
-	func sensorManagerDeviceConnectionChanged(sensorManager: SensorManager, device: Device) {
-		tableView.reloadData()
+	func sensorManagerDeviceConnectionChanged(sensorManager: SensorManager, device: Device, connected:Bool) {
+		print("Sensor manager: \(sensorManager) - Device connection changed: \(device.name) - Connected: \(connected)")
 	}
 	
 	func sensorManagerDeviceSensorAdded(sensorManager: SensorManager, device: Device, sensor: Sensor) {
 		tableView.reloadData()
-		//print("Sensor manager: \(sensorManager) - Device: \(device.name) - Sensor added: \(sensor.name)")
+		print("Sensor manager: \(sensorManager) - Device: \(device.name) - Sensor added: \(sensor.name)")
 	}
 	
 	func sensorManagerDeviceSensorUpdated(sensorManager: SensorManager, device: Device, sensor: Sensor, state: Bool) {
 		reloadSensor(sensor)
-		//print("Sensor manager: \(sensorManager) - Device: \(device.name) - Sensor: \(sensor.name) - Value: \(state)")
+		print("Sensor manager: \(sensorManager) - Device: \(device.name) - Sensor: \(sensor.name) - Value: \(state)")
 	}
 }
