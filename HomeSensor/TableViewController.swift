@@ -60,6 +60,7 @@ class TableViewController: UITableViewController, SensorManagerDelegateProtocol 
 	override func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
 		
 		tableView.footerViewForSection(section)?.textLabel?.font = UIFont.systemFontOfSize(10)
+		tableView.footerViewForSection(section)?.textLabel?.textColor = UIColor(white: 0.8, alpha: 1)
 		
 		return stringForSectionFooter(section)
 	}
@@ -79,8 +80,26 @@ class TableViewController: UITableViewController, SensorManagerDelegateProtocol 
 		cell.state = sensor.state
 		cell.name = sensor.name
 		cell.timestamp = sensor.timestamp
+		cell.notificationSubscription = sensor.notificationSubscription
 		
 		return cell
+	}
+	
+	override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+		let sensor = sensorManager.devices[indexPath.section].sensors[indexPath.row]
+		
+		switch sensor.notificationSubscription {
+			case .Off:
+				sensor.notificationSubscription = .Once
+				
+			case .Once:
+				sensor.notificationSubscription = .Multiple
+				
+			case .Multiple:
+				sensor.notificationSubscription = .Off
+		}
+		
+		tableView.reloadData()
 	}
 	
 	private func reloadSensor(updatedSensor:Sensor) {
@@ -138,21 +157,21 @@ extension TableViewController {
 	
 	func sensorManagerDeviceAdded(sensorManager: SensorManager, device: Device) {
 		tableView.reloadData()
-		print("Sensor manager: \(sensorManager) - Device added: \(device.name)")
+		//print("Sensor manager: \(sensorManager) - Device added: \(device.name)")
 	}
 	
 	func sensorManagerDeviceConnectionChanged(sensorManager: SensorManager, device: Device, connected:Bool) {
 		tableView.reloadData()
-		print("Sensor manager: \(sensorManager) - Device connection changed: \(device.name) - Connected: \(connected)")
+		//print("Sensor manager: \(sensorManager) - Device connection changed: \(device.name) - Connected: \(connected)")
 	}
 	
 	func sensorManagerDeviceSensorAdded(sensorManager: SensorManager, device: Device, sensor: Sensor) {
 		tableView.reloadData()
-		print("Sensor manager: \(sensorManager) - Device: \(device.name) - Sensor added: \(sensor.name)")
+		//print("Sensor manager: \(sensorManager) - Device: \(device.name) - Sensor added: \(sensor.name)")
 	}
 	
 	func sensorManagerDeviceSensorUpdated(sensorManager: SensorManager, device: Device, sensor: Sensor, state: Bool) {
 		reloadSensor(sensor)
-		print("Sensor manager: \(sensorManager) - Device: \(device.name) - Sensor: \(sensor.name) - Value: \(state)")
+		//print("Sensor manager: \(sensorManager) - Device: \(device.name) - Sensor: \(sensor.name) - Value: \(state)")
 	}
 }

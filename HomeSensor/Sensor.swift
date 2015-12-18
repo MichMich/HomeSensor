@@ -8,6 +8,12 @@
 
 import Foundation
 
+enum SensorNotificationSubscription {
+	case Off
+	case Once
+	case Multiple
+}
+
 class Sensor {
 	var name: String
 	var identifier: String
@@ -22,6 +28,7 @@ class Sensor {
 		}
 	}
 	
+	var notificationSubscription:SensorNotificationSubscription = .Off
 	var delegate:SensorDelegateProtocol?
 	
 	init(name: String, identifier:String) {

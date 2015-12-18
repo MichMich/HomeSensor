@@ -10,6 +10,9 @@ import UIKit
 
 class SensorTableViewCell: UITableViewCell {
 	
+	@IBOutlet weak var nameLabel: UILabel!
+	@IBOutlet weak var timestampLabel: UILabel!
+	@IBOutlet weak var alertIconImageView: UIImageView!
 	
 	var name:String? {
 		didSet {
@@ -24,6 +27,12 @@ class SensorTableViewCell: UITableViewCell {
 	}
 	
 	var state:Bool = false {
+		didSet {
+			updateUI()
+		}
+	}
+	
+	var notificationSubscription:SensorNotificationSubscription = .Off {
 		didSet {
 			updateUI()
 		}
@@ -44,7 +53,7 @@ class SensorTableViewCell: UITableViewCell {
 	
 	private func updateUI() {
 		
-		textLabel?.text = name
+		nameLabel.text = name
 		
 		if timestamp != nil {
 			updateTimestampLabel()
@@ -54,21 +63,39 @@ class SensorTableViewCell: UITableViewCell {
 			timestampUpdateTimer = nil
 		}
 		
+		
+		switch notificationSubscription {
+			case .Off:
+				alertIconImageView.image = UIImage(named: "NotificationOff")
+				
+			case .Once:
+				alertIconImageView.image = UIImage(named: "NotificationOnce")
+			
+			case .Multiple:
+				alertIconImageView.image = UIImage(named: "NotificationMultiple")
+		}
+		
 		if state {
-			textLabel?.textColor = UIColor.whiteColor()
-			detailTextLabel?.textColor = UIColor(hue: 1, saturation: 0.25, brightness: 1, alpha: 1)
+			nameLabel?.textColor = UIColor.whiteColor()
+			timestampLabel?.textColor = UIColor(hue: 1, saturation: 0.25, brightness: 1, alpha: 1)
 			contentView.backgroundColor = UIColor.redColor()
+			
+			alertIconImageView.image = alertIconImageView.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+			alertIconImageView.tintColor = UIColor.whiteColor()
 		} else {
-			textLabel?.textColor = UIColor.blackColor()
-			detailTextLabel?.textColor = UIColor.grayColor()
+			nameLabel?.textColor = UIColor.blackColor()
+			timestampLabel?.textColor = UIColor.grayColor()
 			contentView.backgroundColor = UIColor.whiteColor()
+			
+			alertIconImageView.image = alertIconImageView.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+			alertIconImageView.tintColor = UIColor(white: 0.3, alpha: 1)
 		}
 		
 	}
 	
 	func updateTimestampLabel() {
 		if let timestamp = timestamp {
-			detailTextLabel?.text = timestamp.toRelativeFuzzyString()
+			timestampLabel?.text = timestamp.toRelativeFuzzyString()
 		}
 		
 		timestampUpdateTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "updateTimestampLabel", userInfo: nil, repeats: false)
