@@ -22,6 +22,7 @@
 		4CB79CB21C121A5A00514E27 /* SensorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB79CB11C121A5A00514E27 /* SensorManager.swift */; };
 		4CB79CB41C121CFE00514E27 /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB79CB31C121CFE00514E27 /* Sensor.swift */; };
 		4CB79CB61C121D0400514E27 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB79CB51C121D0400514E27 /* Device.swift */; };
+		4CE297D41C243F3900AFFE88 /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE297D31C243F3900AFFE88 /* NSDateExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		4CB79CB11C121A5A00514E27 /* SensorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorManager.swift; sourceTree = "<group>"; };
 		4CB79CB31C121CFE00514E27 /* Sensor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
 		4CB79CB51C121D0400514E27 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		4CE297D31C243F3900AFFE88 /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				4C5BBE711C1B441B001B1A8D /* TableViewController.swift */,
 				4C6434331C20915D002E557E /* SensorTableViewCell.swift */,
 				4C6434351C209637002E557E /* Config.swift */,
+				4CE297D31C243F3900AFFE88 /* NSDateExtension.swift */,
 			);
 			path = HomeSensor;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				4C6434341C20915D002E557E /* SensorTableViewCell.swift in Sources */,
 				4CB79CB41C121CFE00514E27 /* Sensor.swift in Sources */,
 				4C6434361C209637002E557E /* Config.swift in Sources */,
+				4CE297D41C243F3900AFFE88 /* NSDateExtension.swift in Sources */,
 				4CB79CB21C121A5A00514E27 /* SensorManager.swift in Sources */,
 				4CB79C6C1C12094200514E27 /* AppDelegate.swift in Sources */,
 				4CB79CB61C121D0400514E27 /* Device.swift in Sources */,

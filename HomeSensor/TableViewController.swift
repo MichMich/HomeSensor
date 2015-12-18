@@ -11,6 +11,7 @@ import UIKit
 class TableViewController: UITableViewController, SensorManagerDelegateProtocol {
 	
 	let sensorManager = SensorManager.sharedInstance
+	var footerUpdateTimer:NSTimer? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,8 @@ class TableViewController: UITableViewController, SensorManagerDelegateProtocol 
 		dishwasher.addSensor(Sensor(name: "Ready", identifier: "ready"))
 		
 		sensorManager.mqttSession.addObserver(self, forKeyPath: "status", options: NSKeyValueObservingOptions.New, context: nil)
+		
+		// footerUpdateTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "updateConnectionDetails", userInfo: nil, repeats: true)
     }
 
 	override func viewWillAppear(animated: Bool) {
@@ -58,12 +61,13 @@ class TableViewController: UITableViewController, SensorManagerDelegateProtocol 
 		
 		tableView.footerViewForSection(section)?.textLabel?.font = UIFont.systemFontOfSize(10)
 		
-		
+		return stringForSectionFooter(section)
+	}
+	
+	func stringForSectionFooter(section:Int) -> String {
 		let connectionString = sensorManager.devices[section].connected ? "Connected" : "Disconnected"
-		if let timestamp = sensorManager.devices[section].timestamp, let textString = timestamp.toRelativeString(abbreviated: false, maxUnits: 1) {
-			let timestampString = (textString != "just now") ? "\(textString) ago." : "\(textString)."
-			
-			return "\(connectionString) \(timestampString)"
+		if let timestamp = sensorManager.devices[section].timestamp, let timeString = timestamp.toRelativeFuzzyString() {
+			return "\(connectionString) \(timeString.lowercaseString)"
 		}
 		return connectionString
 	}
@@ -89,6 +93,19 @@ class TableViewController: UITableViewController, SensorManagerDelegateProtocol 
 			}
 		}
 	}
+	
+/*
+	func updateConnectionDetails() {
+		if let visibleIndexPaths = tableView.indexPathsForVisibleRows {
+			for indexPath in visibleIndexPaths {
+				if let label = tableView.footerViewForSection(indexPath.section)?.textLabel {
+					label.text = stringForSectionFooter(indexPath.section)
+					label.sizeToFit()
+				}
+			}
+		}
+	}
+*/
 	
 	override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
 		
