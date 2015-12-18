@@ -125,6 +125,7 @@ extension TableViewController {
 	}
 	
 	func sensorManagerDeviceConnectionChanged(sensorManager: SensorManager, device: Device, connected:Bool) {
+		tableView.reloadData()
 		print("Sensor manager: \(sensorManager) - Device connection changed: \(device.name) - Connected: \(connected)")
 	}
 	
