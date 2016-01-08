@@ -55,6 +55,10 @@ extension Device {
 	func sensorStateUpdate(sensor: Sensor, state: Bool) {
 		delegate.deviceSensorUpdated(self, sensor: sensor, state: state)
 	}
+	
+	func sensorNotificationSubscriptionChanged(sensor: Sensor, notificationType: NotificationType) {
+		delegate.deviceSensorNotificationSubscriptionChanged(self, sensor: sensor, notificationType: notificationType)
+	}
 }
 
 protocol DeviceDelegateProtocol {
@@ -62,5 +66,6 @@ protocol DeviceDelegateProtocol {
 	func deviceConnectionChanged(device:Device)
 	func deviceSensorAdded(device:Device, sensor:Sensor)
 	func deviceSensorUpdated(device:Device, sensor:Sensor, state:Bool)
+	func deviceSensorNotificationSubscriptionChanged(device: Device, sensor: Sensor, notificationType: NotificationType)
 	
 }

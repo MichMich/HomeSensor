@@ -8,11 +8,6 @@
 
 import Foundation
 
-enum SensorNotificationSubscription {
-	case Off
-	case Once
-	case Multiple
-}
 
 class Sensor {
 	var name: String
@@ -28,7 +23,13 @@ class Sensor {
 		}
 	}
 	
-	var notificationSubscription:SensorNotificationSubscription = .Off
+	var notificationSubscription:NotificationType = .None {
+		didSet {
+			if notificationSubscription != oldValue {
+				delegate?.sensorNotificationSubscriptionChanged(self, notificationType: notificationSubscription)
+			}
+		}
+	}
 	var delegate:SensorDelegateProtocol?
 	
 	init(name: String, identifier:String) {
@@ -51,6 +52,7 @@ class Sensor {
 
 protocol SensorDelegateProtocol {
 	func sensorStateUpdate(sensor:Sensor, state:Bool)
+	func sensorNotificationSubscriptionChanged(sensor:Sensor, notificationType:NotificationType)
 }
 
 extension String {

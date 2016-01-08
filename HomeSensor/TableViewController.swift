@@ -11,6 +11,8 @@ import UIKit
 class TableViewController: UITableViewController, SensorManagerDelegateProtocol {
 	
 	let sensorManager = SensorManager.sharedInstance
+	let mqttManager = MQTTManager.sharedInstance
+	
 	var footerUpdateTimer:NSTimer? = nil
 
     override func viewDidLoad() {
@@ -32,7 +34,7 @@ class TableViewController: UITableViewController, SensorManagerDelegateProtocol 
 		
 		dishwasher.addSensor(Sensor(name: "Ready", identifier: "ready"))
 		
-		sensorManager.mqttSession.addObserver(self, forKeyPath: "status", options: NSKeyValueObservingOptions.New, context: nil)
+		mqttManager.mqttSession.addObserver(self, forKeyPath: "status", options: NSKeyValueObservingOptions.New, context: nil)
 		
 		// footerUpdateTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "updateConnectionDetails", userInfo: nil, repeats: true)
     }
@@ -89,14 +91,14 @@ class TableViewController: UITableViewController, SensorManagerDelegateProtocol 
 		let sensor = sensorManager.devices[indexPath.section].sensors[indexPath.row]
 		
 		switch sensor.notificationSubscription {
-			case .Off:
+			case .None:
 				sensor.notificationSubscription = .Once
 				
 			case .Once:
 				sensor.notificationSubscription = .Multiple
 				
 			case .Multiple:
-				sensor.notificationSubscription = .Off
+				sensor.notificationSubscription = .None
 		}
 		
 		tableView.reloadData()
@@ -113,24 +115,11 @@ class TableViewController: UITableViewController, SensorManagerDelegateProtocol 
 		}
 	}
 	
-/*
-	func updateConnectionDetails() {
-		if let visibleIndexPaths = tableView.indexPathsForVisibleRows {
-			for indexPath in visibleIndexPaths {
-				if let label = tableView.footerViewForSection(indexPath.section)?.textLabel {
-					label.text = stringForSectionFooter(indexPath.section)
-					label.sizeToFit()
-				}
-			}
-		}
-	}
-*/
-	
 	override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
 		
 		var statusString = "Unknown"
 		
-		switch sensorManager.mqttSession.status {
+		switch mqttManager.mqttSession.status {
 			case .Created:
 				statusString = "Created"
 			case .Connecting:
@@ -173,5 +162,9 @@ extension TableViewController {
 	func sensorManagerDeviceSensorUpdated(sensorManager: SensorManager, device: Device, sensor: Sensor, state: Bool) {
 		reloadSensor(sensor)
 		//print("Sensor manager: \(sensorManager) - Device: \(device.name) - Sensor: \(sensor.name) - Value: \(state)")
+	}
+	
+	func sensorManagerDeviceSensorNotificationSubscriptionChanged(sensorManager: SensorManager, device: Device, sensor: Sensor, notificationType: NotificationType) {
+		reloadSensor(sensor)
 	}
 }

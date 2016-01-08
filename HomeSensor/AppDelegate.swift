@@ -16,6 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 		// Override point for customization after application launch.
+		print("Register for notification.")
+		
+		let settings = UIUserNotificationSettings(forTypes: ([.Sound, .Alert, .Badge]), categories: nil)
+		UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+		UIApplication.sharedApplication().registerForRemoteNotifications()
+		
 		return true
 	}
 
@@ -41,6 +47,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 	}
 
-
+	func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+		print("Did register for notifications.")
+		
+		var deviceTokenString = deviceToken.description.stringByTrimmingCharactersInSet(NSCharacterSet(charactersInString: "<>"))
+		deviceTokenString = deviceTokenString.stringByReplacingOccurrencesOfString(" ", withString: "")
+		
+		NotificationManager.sharedInstance.deviceToken = deviceTokenString
+		
+		print(deviceTokenString)
+	}
+	
+	func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+		print("Could not register for notifications.")
+		print(error)
+	}
 }
 

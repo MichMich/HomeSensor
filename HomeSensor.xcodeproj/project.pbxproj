@@ -7,11 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C145A6D1C40523D0021BE5D /* alarm_bedroom.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4C145A651C40523D0021BE5D /* alarm_bedroom.aiff */; };
+		4C145A6E1C40523D0021BE5D /* alarm_door.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4C145A661C40523D0021BE5D /* alarm_door.aiff */; };
+		4C145A6F1C40523D0021BE5D /* alarm_hallway.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4C145A671C40523D0021BE5D /* alarm_hallway.aiff */; };
+		4C145A701C40523D0021BE5D /* alarm_livingroom.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4C145A681C40523D0021BE5D /* alarm_livingroom.aiff */; };
+		4C145A711C40523D0021BE5D /* alarm_spareroom.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4C145A691C40523D0021BE5D /* alarm_spareroom.aiff */; };
+		4C145A721C40523D0021BE5D /* app_restart.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4C145A6A1C40523D0021BE5D /* app_restart.aiff */; };
+		4C145A731C40523D0021BE5D /* dishwasher_ready.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4C145A6B1C40523D0021BE5D /* dishwasher_ready.aiff */; };
+		4C145A741C40523D0021BE5D /* dishwasher_reset.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4C145A6C1C40523D0021BE5D /* dishwasher_reset.aiff */; };
 		4C5BBE721C1B441B001B1A8D /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5BBE711C1B441B001B1A8D /* TableViewController.swift */; };
 		4C5BBE741C1B60A1001B1A8D /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C5BBE731C1B60A1001B1A8D /* SwiftDate.framework */; };
 		4C5BBE761C1B615D001B1A8D /* SwiftDate.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4C5BBE731C1B60A1001B1A8D /* SwiftDate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4C6434341C20915D002E557E /* SensorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6434331C20915D002E557E /* SensorTableViewCell.swift */; };
 		4C6434361C209637002E557E /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6434351C209637002E557E /* Config.swift */; };
+		4CA4895A1C402F540018836D /* MQTTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA489591C402F540018836D /* MQTTManager.swift */; };
 		4CB79C6C1C12094200514E27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB79C6B1C12094200514E27 /* AppDelegate.swift */; };
 		4CB79C711C12094200514E27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CB79C6F1C12094200514E27 /* Main.storyboard */; };
 		4CB79C731C12094200514E27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CB79C721C12094200514E27 /* Assets.xcassets */; };
@@ -23,6 +32,7 @@
 		4CB79CB41C121CFE00514E27 /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB79CB31C121CFE00514E27 /* Sensor.swift */; };
 		4CB79CB61C121D0400514E27 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB79CB51C121D0400514E27 /* Device.swift */; };
 		4CE297D41C243F3900AFFE88 /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE297D31C243F3900AFFE88 /* NSDateExtension.swift */; };
+		4CEF31321C400AEA0095734E /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEF31311C400AEA0095734E /* NotificationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,10 +67,19 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4C145A651C40523D0021BE5D /* alarm_bedroom.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = alarm_bedroom.aiff; sourceTree = "<group>"; };
+		4C145A661C40523D0021BE5D /* alarm_door.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = alarm_door.aiff; sourceTree = "<group>"; };
+		4C145A671C40523D0021BE5D /* alarm_hallway.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = alarm_hallway.aiff; sourceTree = "<group>"; };
+		4C145A681C40523D0021BE5D /* alarm_livingroom.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = alarm_livingroom.aiff; sourceTree = "<group>"; };
+		4C145A691C40523D0021BE5D /* alarm_spareroom.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = alarm_spareroom.aiff; sourceTree = "<group>"; };
+		4C145A6A1C40523D0021BE5D /* app_restart.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = app_restart.aiff; sourceTree = "<group>"; };
+		4C145A6B1C40523D0021BE5D /* dishwasher_ready.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = dishwasher_ready.aiff; sourceTree = "<group>"; };
+		4C145A6C1C40523D0021BE5D /* dishwasher_reset.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = dishwasher_reset.aiff; sourceTree = "<group>"; };
 		4C5BBE711C1B441B001B1A8D /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		4C5BBE731C1B60A1001B1A8D /* SwiftDate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftDate.framework; path = HomeSensor/SwiftDate.framework; sourceTree = "<group>"; };
 		4C6434331C20915D002E557E /* SensorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorTableViewCell.swift; sourceTree = "<group>"; };
 		4C6434351C209637002E557E /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		4CA489591C402F540018836D /* MQTTManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQTTManager.swift; sourceTree = "<group>"; };
 		4CB79C681C12094200514E27 /* HomeSensor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeSensor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CB79C6B1C12094200514E27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CB79C701C12094200514E27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -79,6 +98,7 @@
 		4CB79CB31C121CFE00514E27 /* Sensor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
 		4CB79CB51C121D0400514E27 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		4CE297D31C243F3900AFFE88 /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
+		4CEF31311C400AEA0095734E /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +128,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C145A641C40523D0021BE5D /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				4C145A651C40523D0021BE5D /* alarm_bedroom.aiff */,
+				4C145A661C40523D0021BE5D /* alarm_door.aiff */,
+				4C145A671C40523D0021BE5D /* alarm_hallway.aiff */,
+				4C145A681C40523D0021BE5D /* alarm_livingroom.aiff */,
+				4C145A691C40523D0021BE5D /* alarm_spareroom.aiff */,
+				4C145A6A1C40523D0021BE5D /* app_restart.aiff */,
+				4C145A6B1C40523D0021BE5D /* dishwasher_ready.aiff */,
+				4C145A6C1C40523D0021BE5D /* dishwasher_reset.aiff */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
 		4CB79C5F1C12094200514E27 = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +150,7 @@
 				4CB79C7F1C12094200514E27 /* HomeSensorTests */,
 				4CB79C8A1C12094200514E27 /* HomeSensorUITests */,
 				4CB79C691C12094200514E27 /* Products */,
+				4C145A641C40523D0021BE5D /* Audio */,
 				4C5BBE731C1B60A1001B1A8D /* SwiftDate.framework */,
 				4CB79CAB1C1215D100514E27 /* MQTTClient.framework */,
 			);
@@ -140,6 +176,8 @@
 				4CB79C771C12094200514E27 /* Info.plist */,
 				4CB79CAE1C12166200514E27 /* HomeSensor-Bridging-Header.h */,
 				4CB79CB11C121A5A00514E27 /* SensorManager.swift */,
+				4CA489591C402F540018836D /* MQTTManager.swift */,
+				4CEF31311C400AEA0095734E /* NotificationManager.swift */,
 				4CB79CB31C121CFE00514E27 /* Sensor.swift */,
 				4CB79CB51C121D0400514E27 /* Device.swift */,
 				4C5BBE711C1B441B001B1A8D /* TableViewController.swift */,
@@ -237,6 +275,12 @@
 				TargetAttributes = {
 					4CB79C671C12094200514E27 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 9ZW6KB2LSP;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					4CB79C7B1C12094200514E27 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -273,8 +317,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C145A701C40523D0021BE5D /* alarm_livingroom.aiff in Resources */,
+				4C145A6F1C40523D0021BE5D /* alarm_hallway.aiff in Resources */,
+				4C145A721C40523D0021BE5D /* app_restart.aiff in Resources */,
 				4CB79C761C12094200514E27 /* LaunchScreen.storyboard in Resources */,
 				4CB79C731C12094200514E27 /* Assets.xcassets in Resources */,
+				4C145A731C40523D0021BE5D /* dishwasher_ready.aiff in Resources */,
+				4C145A741C40523D0021BE5D /* dishwasher_reset.aiff in Resources */,
+				4C145A711C40523D0021BE5D /* alarm_spareroom.aiff in Resources */,
+				4C145A6D1C40523D0021BE5D /* alarm_bedroom.aiff in Resources */,
+				4C145A6E1C40523D0021BE5D /* alarm_door.aiff in Resources */,
 				4CB79C711C12094200514E27 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,11 +355,13 @@
 				4C5BBE721C1B441B001B1A8D /* TableViewController.swift in Sources */,
 				4C6434341C20915D002E557E /* SensorTableViewCell.swift in Sources */,
 				4CB79CB41C121CFE00514E27 /* Sensor.swift in Sources */,
+				4CEF31321C400AEA0095734E /* NotificationManager.swift in Sources */,
 				4C6434361C209637002E557E /* Config.swift in Sources */,
 				4CE297D41C243F3900AFFE88 /* NSDateExtension.swift in Sources */,
 				4CB79CB21C121A5A00514E27 /* SensorManager.swift in Sources */,
 				4CB79C6C1C12094200514E27 /* AppDelegate.swift in Sources */,
 				4CB79CB61C121D0400514E27 /* Device.swift in Sources */,
+				4CA4895A1C402F540018836D /* MQTTManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +504,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -457,8 +513,9 @@
 				);
 				INFOPLIST_FILE = HomeSensor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = nl.xonaymedia.HomeSensor;
+				PRODUCT_BUNDLE_IDENTIFIER = nl.xonaymedia.homesensor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "HomeSensor/HomeSensor-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -469,6 +526,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -476,8 +535,9 @@
 				);
 				INFOPLIST_FILE = HomeSensor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = nl.xonaymedia.HomeSensor;
+				PRODUCT_BUNDLE_IDENTIFIER = nl.xonaymedia.homesensor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "HomeSensor/HomeSensor-Bridging-Header.h";
 			};
 			name = Release;

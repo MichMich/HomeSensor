@@ -9,25 +9,16 @@
 import Foundation
 import SwiftDate
 
-
-
-class SensorManager: NSObject, MQTTSessionDelegate, DeviceDelegateProtocol {
+class SensorManager: NSObject, DeviceDelegateProtocol {
 	static let sharedInstance = SensorManager()
 	
-	let mqttSession = MQTTSession(clientId: "HomeSensor", userName: Config.MQTTUsername, password: Config.MQTTPassword)
+	lazy var mqttManager = MQTTManager.sharedInstance
 	var devices: [Device] = []
-	
 	var delegate:SensorManagerDelegateProtocol?
 	
 	override init() {
 		super.init()
-		
 		print("Init SensorManager!" , self)
-		
-		mqttSession.delegate = self
-		connect()
-		
-		print("Init done")
 	}
 	
 	func addDevice(device:Device) {
@@ -44,63 +35,30 @@ class SensorManager: NSObject, MQTTSessionDelegate, DeviceDelegateProtocol {
 		return "/device/\(device.identifier)/connected"
 	}
 	
-	func connect() {
-		if mqttSession.status != MQTTSessionStatus.Connected && mqttSession.status != MQTTSessionStatus.Connecting {
-			mqttSession.connectToHost(Config.MQTTHostname, port: Config.MQTTPort, usingSSL: false)
-			
+	func topicForNotificationSubscriptionForSensorOnDevice(sensor:Sensor, onDevice device:Device) -> String? {
+		if let deviceToken = NotificationManager.sharedInstance.deviceToken {
+			return "/subscription/\(deviceToken)/\(device.identifier)/\(sensor.identifier)"
 		}
+		return nil
 	}
 	
-}
-
-// MARK: MQTTSessionDelegate Methods
-extension SensorManager {
-	
-	func newMessage(session: MQTTSession!, data: NSData!, onTopic topic: String!, qos: MQTTQosLevel, retained: Bool, mid: UInt32) {
-		if let topic = topic, let string = String(data: data, encoding: NSUTF8StringEncoding) {
-			for device in devices {
-				
-				let deviceConnectedTopic = topicForDeviceConnection(device)
-				if deviceConnectedTopic == topic {
-					device.receivedNewConnectionValue(string)
-				} else if "\(deviceConnectedTopic)/timestamp" == topic {
-					device.receivedNewConnectionTimestamp(string)
-				}
-				
-				for sensor in device.sensors {
-					let sensorTopic = topicForSensor(sensor, onDevice: device)
-					if sensorTopic == topic {
-						sensor.receivedNewValue(string)
-					} else if "\(sensorTopic)/timestamp" == topic {
-						sensor.receivedNewTimestamp(string)
-					}
-				}
-			}
-		}
-	}
-	
-	func connectionClosed(session: MQTTSession!) {
-		connect()
-	}
-	
-	func connected(session: MQTTSession!) {
-		subscribeAll()
-		print("Connected to MQTT server.")
-	}
-
 	private func subscribeSensor(sensor:Sensor, forDevice device:Device) {
 		let topic = topicForSensor(sensor, onDevice: device)
-		mqttSession.subscribeToTopic(topic, atLevel: MQTTQosLevel.AtLeastOnce)
-		mqttSession.subscribeToTopic("\(topic)/timestamp", atLevel: MQTTQosLevel.AtLeastOnce)
+		mqttManager.subscribeToTopic(topic)
+		mqttManager.subscribeToTopic("\(topic)/timestamp")
+		
+		if let notificationTopic = topicForNotificationSubscriptionForSensorOnDevice(sensor, onDevice: device) {
+			mqttManager.subscribeToTopic(notificationTopic)
+		}
 	}
 	
 	private func subscribeDevice(device:Device) {
 		let topic = topicForDeviceConnection(device)
-		mqttSession.subscribeToTopic(topic, atLevel: MQTTQosLevel.AtLeastOnce)
-		mqttSession.subscribeToTopic("\(topic)/timestamp", atLevel: MQTTQosLevel.AtLeastOnce)
+		mqttManager.subscribeToTopic(topic)
+		mqttManager.subscribeToTopic("\(topic)/timestamp")
 	}
 	
-	private func subscribeAll() {
+	func subscribeAll() {
 		for device in devices {
 			subscribeDevice(device)
 			for sensor in device.sensors {
@@ -108,13 +66,17 @@ extension SensorManager {
 			}
 		}
 	}
+	
 }
+
+
 
 protocol SensorManagerDelegateProtocol {
 	func sensorManagerDeviceAdded(sensorManager:SensorManager, device:Device)
 	func sensorManagerDeviceConnectionChanged(sensorManager:SensorManager, device:Device, connected:Bool)
 	func sensorManagerDeviceSensorAdded(sensorManager:SensorManager, device:Device, sensor:Sensor)
 	func sensorManagerDeviceSensorUpdated(sensorManager:SensorManager, device:Device, sensor:Sensor, state:Bool)
+	func sensorManagerDeviceSensorNotificationSubscriptionChanged(sensorManager:SensorManager, device:Device, sensor:Sensor, notificationType:NotificationType)
 }
 
 extension SensorManagerDelegateProtocol {
@@ -122,6 +84,7 @@ extension SensorManagerDelegateProtocol {
 	func sensorManagerDeviceConnectionChanged(sensorManager:SensorManager, device:Device, connected:Bool) {}
 	func sensorManagerDeviceSensorAdded(sensorManager:SensorManager, device:Device, sensor:Sensor) {}
 	func sensorManagerDeviceSensorUpdated(sensorManager:SensorManager, device:Device, sensor:Sensor, state:Bool) {}
+	func sensorManagerDeviceSensorNotificationSubscriptionChanged(sensorManager:SensorManager, device:Device, sensor:Sensor, notificationType:NotificationType) {}
 }
 
 
@@ -139,5 +102,10 @@ extension SensorManager {
 	
 	func deviceSensorUpdated(device: Device, sensor: Sensor, state: Bool) {
 		delegate?.sensorManagerDeviceSensorUpdated(self, device: device, sensor: sensor, state: state)
+	}
+	
+	func deviceSensorNotificationSubscriptionChanged(device: Device, sensor: Sensor, notificationType: NotificationType) {
+		delegate?.sensorManagerDeviceSensorNotificationSubscriptionChanged(self, device: device, sensor: sensor, notificationType: notificationType)
+		NotificationManager.sharedInstance.registerForNotification(notificationType, device: device, sensor: sensor)
 	}
 }

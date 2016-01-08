@@ -32,7 +32,7 @@ class SensorTableViewCell: UITableViewCell {
 		}
 	}
 	
-	var notificationSubscription:SensorNotificationSubscription = .Off {
+	var notificationSubscription:NotificationType = .None {
 		didSet {
 			updateUI()
 		}
@@ -65,7 +65,7 @@ class SensorTableViewCell: UITableViewCell {
 		
 		
 		switch notificationSubscription {
-			case .Off:
+			case .None:
 				alertIconImageView.image = UIImage(named: "NotificationOff")
 				
 			case .Once:
