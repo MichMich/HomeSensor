@@ -28,16 +28,16 @@ class SensorManager: NSObject, DeviceDelegateProtocol {
 	}
 	
 	func topicForSensor(sensor:Sensor, onDevice device:Device) -> String {
-		return "/device/\(device.identifier)/sensor/\(sensor.identifier)"
+		return "/homesensor/\(device.identifier)/\(sensor.identifier)"
 	}
 	
 	func topicForDeviceConnection(device:Device) -> String {
-		return "/device/\(device.identifier)/connected"
+		return "/homesensor/\(device.identifier)/connected"
 	}
 	
 	func topicForNotificationSubscriptionForSensorOnDevice(sensor:Sensor, onDevice device:Device) -> String? {
 		if let deviceToken = NotificationManager.sharedInstance.deviceToken {
-			return "/subscription/\(deviceToken)/\(device.identifier)/\(sensor.identifier)"
+			return "/homesensor/subscription/\(deviceToken)/\(device.identifier)/\(sensor.identifier)"
 		}
 		return nil
 	}

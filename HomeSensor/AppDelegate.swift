@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import AVFoundation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
-
+	var audioPlayer:AVAudioPlayer!
 
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 		// Override point for customization after application launch.
@@ -61,6 +62,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
 		print("Could not register for notifications.")
 		print(error)
+	}
+	
+	func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+		
+		if let userInfoDict = userInfo["aps"] {
+			if let soundName = userInfoDict["sound"] as? String {
+				
+				let soundURL = NSURL.fileURLWithPath("\(NSBundle.mainBundle().resourcePath!)/\(soundName)");
+				do {
+					audioPlayer = try AVAudioPlayer(contentsOfURL: soundURL)
+					audioPlayer.play()
+				} catch {
+					print("could not create audio file")
+					//Handle the error
+				}
+			}
+		}
+		
+		
+//		NSLog(@"%@",userInfo);
+//		
+//		NSString *sound = [userInfo valueForKeyPath:@"aps.sound"];
+//		
+//		NSURL *soundURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@", [[NSBundle mainBundle] resourcePath], sound]];
+//		
+//		NSLog(@"%@", soundURL);
+//		
+//		NSError *error;
+//		self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:&error];
+//		[self.audioPlayer play];
+//		
+//		
+//		
+//		NSString *message = [userInfo valueForKeyPath:@"aps.alert"];
+//		
+//		[[[UIAlertView alloc] initWithTitle: message message:nil delegate: nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+//		
+//		
+		
+		
 	}
 }
 

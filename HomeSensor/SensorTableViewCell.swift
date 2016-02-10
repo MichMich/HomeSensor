@@ -95,7 +95,10 @@ class SensorTableViewCell: UITableViewCell {
 	
 	func updateTimestampLabel() {
 		if let timestamp = timestamp {
+			timestampLabel.hidden = false
 			timestampLabel?.text = timestamp.toRelativeFuzzyString()
+		} else {
+			timestampLabel.hidden = true
 		}
 		
 		timestampUpdateTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "updateTimestampLabel", userInfo: nil, repeats: false)
