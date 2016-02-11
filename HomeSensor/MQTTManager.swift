@@ -34,6 +34,9 @@ extension MQTTManager {
 	
 	func newMessage(session: MQTTSession!, data: NSData!, onTopic topic: String!, qos: MQTTQosLevel, retained: Bool, mid: UInt32) {
 		if let topic = topic, let string = String(data: data, encoding: NSUTF8StringEncoding) {
+			
+			print(topic, string)
+			
 			for device in sensorManager.devices {
 				
 				let deviceConnectedTopic = sensorManager.topicForDeviceConnection(device)
@@ -54,6 +57,7 @@ extension MQTTManager {
 					if let notificationTopic = sensorManager.topicForNotificationSubscriptionForSensorOnDevice(sensor, onDevice: device) {
 						if notificationTopic == topic {
 							if let notificationType = NotificationType(rawValue: string) {
+								sensor.publishNotificationSubscriptionChange = false
 								sensor.notificationSubscription = notificationType
 							}
 						}
@@ -76,9 +80,9 @@ extension MQTTManager {
 		mqttSession.subscribeToTopic(topic, atLevel: MQTTQosLevel.AtLeastOnce)
 	}
 	
-	func publishToTopic(topic:String, payload:String, retain:Bool) {
-		print("Publish: ", topic, ": ", payload, " - ", retain)
-		mqttSession.publishData(payload.dataUsingEncoding(NSUTF8StringEncoding), onTopic: topic, retain: retain, qos: .AtLeastOnce)
+	func publishToTopic(topic:String, payload:String) {
+		print("Publish: ", topic, ": ", payload)
+		mqttSession.publishData(payload.dataUsingEncoding(NSUTF8StringEncoding), onTopic: topic, retain: true, qos: .AtLeastOnce)
 	}
 	
 }

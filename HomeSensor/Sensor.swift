@@ -23,6 +23,8 @@ class Sensor {
 		}
 	}
 	
+	var publishNotificationSubscriptionChange = false
+	
 	var notificationSubscription:NotificationType = .None {
 		didSet {
 			if notificationSubscription != oldValue {

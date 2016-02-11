@@ -28,8 +28,10 @@ class NotificationManager: NSObject {
 	
 	func registerForNotification(notificationType:NotificationType, device:Device, sensor:Sensor) {
 		if let notificationTopic = SensorManager.sharedInstance.topicForNotificationSubscriptionForSensorOnDevice(sensor, onDevice: device) {
-			print(notificationTopic, ":", notificationType.rawValue)
-			mqttManager.publishToTopic(notificationTopic, payload:  notificationType.rawValue, retain: notificationType != .None)
+			if sensor.publishNotificationSubscriptionChange {
+				//print(notificationTopic, ":", notificationType.rawValue)
+				mqttManager.publishToTopic(notificationTopic, payload:  notificationType.rawValue)
+			}
 		} else {
 			print("Could not fetch notificationTopic. Maybe no device token set?")
 		}

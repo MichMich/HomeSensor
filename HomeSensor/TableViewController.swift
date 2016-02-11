@@ -89,6 +89,7 @@ class TableViewController: UITableViewController, SensorManagerDelegateProtocol 
 	
 	override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 		let sensor = sensorManager.devices[indexPath.section].sensors[indexPath.row]
+		sensor.publishNotificationSubscriptionChange = true
 		
 		switch sensor.notificationSubscription {
 			case .None:
