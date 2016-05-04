@@ -1,0 +1,18 @@
+//
+//  Config.swift
+//  HomeSensor
+//
+//  Created by Michael Teeuw on 04-05-16.
+//  Copyright © 2016 Michael Teeuw. All rights reserved.
+//
+
+import Foundation
+
+struct Config {
+
+    static let MQTTUsername = "user"
+    static let MQTTPassword = "pass"
+    static let MQTTHostname = "mqtt.server.com"
+    static let MQTTPort:UInt16 = 1883
+
+}

@@ -1,0 +1,195 @@
+BCSymbolMap Version: 1.0
+-[MSWeakTimer initWithTimeInterval:target:selector:userInfo:repeats:dispatchQueue:]
+-[MSWeakTimer init]
++[MSWeakTimer scheduledTimerWithTimeInterval:target:selector:userInfo:repeats:dispatchQueue:]
+-[MSWeakTimer dealloc]
+-[MSWeakTimer description]
+-[MSWeakTimer setTolerance:]
+-[MSWeakTimer tolerance]
+-[MSWeakTimer resetTimerProperties]
+-[MSWeakTimer schedule]
+__23-[MSWeakTimer schedule]_block_invoke
+__copy_helper_block_
+__destroy_helper_block_
+-[MSWeakTimer fire]
+-[MSWeakTimer invalidate]
+__25-[MSWeakTimer invalidate]_block_invoke
+__copy_helper_block_.54
+__destroy_helper_block_.55
+-[MSWeakTimer timerFired]
+-[MSWeakTimer timeInterval]
+-[MSWeakTimer setTimeInterval:]
+-[MSWeakTimer target]
+-[MSWeakTimer setTarget:]
+-[MSWeakTimer selector]
+-[MSWeakTimer setSelector:]
+-[MSWeakTimer userInfo]
+-[MSWeakTimer setUserInfo:]
+-[MSWeakTimer repeats]
+-[MSWeakTimer setRepeats:]
+-[MSWeakTimer privateSerialQueue]
+-[MSWeakTimer setPrivateSerialQueue:]
+-[MSWeakTimer timer]
+-[MSWeakTimer setTimer:]
+-[MSWeakTimer .cxx_destruct]
+OBJC_CLASSLIST_SUP_REFS_$_
+OBJC_METH_VAR_NAME_
+OBJC_SELECTOR_REFERENCES_
+OBJC_METH_VAR_NAME_.1
+OBJC_SELECTOR_REFERENCES_.2
+OBJC_METH_VAR_NAME_.3
+OBJC_SELECTOR_REFERENCES_.4
+OBJC_METH_VAR_NAME_.5
+OBJC_SELECTOR_REFERENCES_.6
+OBJC_METH_VAR_NAME_.7
+OBJC_SELECTOR_REFERENCES_.8
+OBJC_METH_VAR_NAME_.9
+OBJC_SELECTOR_REFERENCES_.10
+OBJC_CLASSLIST_REFERENCES_$_
+.str
+_unnamed_cfstring_
+OBJC_METH_VAR_NAME_.11
+OBJC_SELECTOR_REFERENCES_.12
+OBJC_METH_VAR_NAME_.13
+OBJC_SELECTOR_REFERENCES_.14
+OBJC_METH_VAR_NAME_.15
+OBJC_SELECTOR_REFERENCES_.16
+OBJC_METH_VAR_NAME_.17
+OBJC_SELECTOR_REFERENCES_.18
+OBJC_METH_VAR_NAME_.19
+OBJC_SELECTOR_REFERENCES_.20
+OBJC_METH_VAR_NAME_.21
+OBJC_SELECTOR_REFERENCES_.22
+OBJC_METH_VAR_NAME_.23
+OBJC_SELECTOR_REFERENCES_.24
+OBJC_METH_VAR_NAME_.25
+OBJC_SELECTOR_REFERENCES_.26
+OBJC_METH_VAR_NAME_.27
+OBJC_SELECTOR_REFERENCES_.28
+OBJC_METH_VAR_NAME_.29
+OBJC_SELECTOR_REFERENCES_.30
+.str.31
+_unnamed_cfstring_.32
+OBJC_METH_VAR_NAME_.33
+OBJC_SELECTOR_REFERENCES_.34
+OBJC_METH_VAR_NAME_.35
+OBJC_SELECTOR_REFERENCES_.36
+OBJC_METH_VAR_NAME_.37
+OBJC_SELECTOR_REFERENCES_.38
+OBJC_METH_VAR_NAME_.39
+OBJC_SELECTOR_REFERENCES_.40
+OBJC_METH_VAR_NAME_.41
+OBJC_SELECTOR_REFERENCES_.42
+OBJC_METH_VAR_NAME_.43
+OBJC_SELECTOR_REFERENCES_.44
+OBJC_METH_VAR_NAME_.45
+OBJC_SELECTOR_REFERENCES_.46
+OBJC_IVAR_$_MSWeakTimer._tolerance
+OBJC_METH_VAR_NAME_.47
+OBJC_SELECTOR_REFERENCES_.48
+OBJC_METH_VAR_NAME_.49
+OBJC_SELECTOR_REFERENCES_.50
+OBJC_METH_VAR_NAME_.51
+OBJC_SELECTOR_REFERENCES_.52
+.str.53
+__block_descriptor_tmp
+OBJC_IVAR_$_MSWeakTimer._timerFlags
+__block_descriptor_tmp.56
+OBJC_METH_VAR_NAME_.57
+OBJC_SELECTOR_REFERENCES_.58
+OBJC_IVAR_$_MSWeakTimer._timeInterval
+OBJC_IVAR_$_MSWeakTimer._target
+OBJC_IVAR_$_MSWeakTimer._selector
+OBJC_IVAR_$_MSWeakTimer._userInfo
+OBJC_IVAR_$_MSWeakTimer._repeats
+OBJC_IVAR_$_MSWeakTimer._privateSerialQueue
+OBJC_IVAR_$_MSWeakTimer._timer
+OBJC_CLASS_NAME_
+OBJC_METH_VAR_NAME_.59
+OBJC_METH_VAR_TYPE_
+l_OBJC_$_CLASS_METHODS_MSWeakTimer
+l_OBJC_METACLASS_RO_$_MSWeakTimer
+OBJC_CLASS_NAME_.60
+OBJC_METH_VAR_TYPE_.61
+OBJC_METH_VAR_TYPE_.62
+OBJC_METH_VAR_NAME_.63
+OBJC_METH_VAR_NAME_.64
+OBJC_METH_VAR_TYPE_.65
+OBJC_METH_VAR_TYPE_.66
+OBJC_METH_VAR_NAME_.67
+OBJC_METH_VAR_NAME_.68
+OBJC_METH_VAR_TYPE_.69
+OBJC_METH_VAR_TYPE_.70
+OBJC_METH_VAR_TYPE_.71
+OBJC_METH_VAR_TYPE_.72
+OBJC_METH_VAR_TYPE_.73
+l_OBJC_$_INSTANCE_METHODS_MSWeakTimer
+OBJC_METH_VAR_NAME_.74
+OBJC_METH_VAR_TYPE_.75
+OBJC_METH_VAR_NAME_.76
+OBJC_METH_VAR_TYPE_.77
+OBJC_METH_VAR_NAME_.78
+OBJC_METH_VAR_TYPE_.79
+OBJC_METH_VAR_NAME_.80
+OBJC_METH_VAR_NAME_.81
+OBJC_METH_VAR_TYPE_.82
+OBJC_METH_VAR_NAME_.83
+OBJC_METH_VAR_TYPE_.84
+OBJC_METH_VAR_NAME_.85
+OBJC_METH_VAR_NAME_.86
+OBJC_METH_VAR_TYPE_.87
+OBJC_METH_VAR_NAME_.88
+OBJC_METH_VAR_TYPE_.89
+l_OBJC_$_INSTANCE_VARIABLES_MSWeakTimer
+OBJC_CLASS_NAME_.90
+OBJC_PROP_NAME_ATTR_
+OBJC_PROP_NAME_ATTR_.91
+OBJC_PROP_NAME_ATTR_.92
+OBJC_PROP_NAME_ATTR_.93
+OBJC_PROP_NAME_ATTR_.94
+OBJC_PROP_NAME_ATTR_.95
+OBJC_PROP_NAME_ATTR_.96
+OBJC_PROP_NAME_ATTR_.97
+OBJC_PROP_NAME_ATTR_.98
+OBJC_PROP_NAME_ATTR_.99
+OBJC_PROP_NAME_ATTR_.100
+OBJC_PROP_NAME_ATTR_.101
+OBJC_PROP_NAME_ATTR_.102
+OBJC_PROP_NAME_ATTR_.103
+OBJC_PROP_NAME_ATTR_.104
+OBJC_PROP_NAME_ATTR_.105
+l_OBJC_$_PROP_LIST_MSWeakTimer
+l_OBJC_CLASS_RO_$_MSWeakTimer
+OBJC_LABEL_CLASS_$
+Apple LLVM version 7.3.0 (clang-703.0.29)
+-[MSWeakTimer .cxx_destruct]
+/Users/Michael/iOS-Development/WOP/HomeSensor/Carthage/Checkouts/MSWeakTimer/Source/MSWeakTimer.m
+/Users/Michael/iOS-Development/WOP/HomeSensor/Carthage/Checkouts/MSWeakTimer
+-[MSWeakTimer setTimer:]
+-[MSWeakTimer timer]
+-[MSWeakTimer setPrivateSerialQueue:]
+-[MSWeakTimer privateSerialQueue]
+-[MSWeakTimer setRepeats:]
+-[MSWeakTimer repeats]
+-[MSWeakTimer setUserInfo:]
+-[MSWeakTimer userInfo]
+/Users/Michael/iOS-Development/WOP/HomeSensor/Carthage/Checkouts/MSWeakTimer/Source/MSWeakTimer.h
+-[MSWeakTimer setSelector:]
+-[MSWeakTimer selector]
+-[MSWeakTimer setTarget:]
+-[MSWeakTimer target]
+-[MSWeakTimer setTimeInterval:]
+-[MSWeakTimer timeInterval]
+-[MSWeakTimer timerFired]
+-[MSWeakTimer invalidate]
+-[MSWeakTimer fire]
+-[MSWeakTimer schedule]
+-[MSWeakTimer resetTimerProperties]
+-[MSWeakTimer tolerance]
+-[MSWeakTimer setTolerance:]
+-[MSWeakTimer description]
+-[MSWeakTimer dealloc]
++[MSWeakTimer scheduledTimerWithTimeInterval:target:selector:userInfo:repeats:dispatchQueue:]
+-[MSWeakTimer init]
+-[MSWeakTimer initWithTimeInterval:target:selector:userInfo:repeats:dispatchQueue:]
+/Users/Michael/Library/Developer/Xcode/DerivedData/MSWeakTimer-fubsijkmhbonppcnwniwonnjzkoq/Build/Intermediates/MSWeakTimer.build/Release-iphoneos/MSWeakTimer-iOS.build/DerivedSources/MSWeakTimer_vers.c

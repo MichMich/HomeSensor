@@ -16,10 +16,7 @@
 		4C145A731C40523D0021BE5D /* dishwasher_ready.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4C145A6B1C40523D0021BE5D /* dishwasher_ready.aiff */; };
 		4C145A741C40523D0021BE5D /* dishwasher_reset.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4C145A6C1C40523D0021BE5D /* dishwasher_reset.aiff */; };
 		4C5BBE721C1B441B001B1A8D /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5BBE711C1B441B001B1A8D /* TableViewController.swift */; };
-		4C5BBE741C1B60A1001B1A8D /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C5BBE731C1B60A1001B1A8D /* SwiftDate.framework */; };
-		4C5BBE761C1B615D001B1A8D /* SwiftDate.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4C5BBE731C1B60A1001B1A8D /* SwiftDate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4C6434341C20915D002E557E /* SensorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6434331C20915D002E557E /* SensorTableViewCell.swift */; };
-		4C6434361C209637002E557E /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6434351C209637002E557E /* Config.swift */; };
 		4CA4895A1C402F540018836D /* MQTTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA489591C402F540018836D /* MQTTManager.swift */; };
 		4CB79C6C1C12094200514E27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB79C6B1C12094200514E27 /* AppDelegate.swift */; };
 		4CB79C711C12094200514E27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CB79C6F1C12094200514E27 /* Main.storyboard */; };
@@ -27,10 +24,23 @@
 		4CB79C761C12094200514E27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CB79C741C12094200514E27 /* LaunchScreen.storyboard */; };
 		4CB79C811C12094200514E27 /* HomeSensorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB79C801C12094200514E27 /* HomeSensorTests.swift */; };
 		4CB79C8C1C12094200514E27 /* HomeSensorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB79C8B1C12094200514E27 /* HomeSensorUITests.swift */; };
-		4CB79CAC1C1215D100514E27 /* MQTTClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CB79CAB1C1215D100514E27 /* MQTTClient.framework */; };
 		4CB79CB21C121A5A00514E27 /* SensorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB79CB11C121A5A00514E27 /* SensorManager.swift */; };
 		4CB79CB41C121CFE00514E27 /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB79CB31C121CFE00514E27 /* Sensor.swift */; };
 		4CB79CB61C121D0400514E27 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB79CB51C121D0400514E27 /* Device.swift */; };
+		4CCD2C971CD9EA8B0065A93D /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCD2C961CD9EA8B0065A93D /* Config.swift */; };
+		4CCD2C991CD9EC9C0065A93D /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCD2C981CD9EC9C0065A93D /* SwiftDate.framework */; };
+		4CCD2CAB1CD9F6980065A93D /* CocoaMQTT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCD2CAA1CD9F6980065A93D /* CocoaMQTT.framework */; };
+		4CCD2CAF1CD9FE7C0065A93D /* CocoaMQTT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCD2CAA1CD9F6980065A93D /* CocoaMQTT.framework */; };
+		4CCD2CB01CD9FE7C0065A93D /* CocoaMQTT.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCD2CAA1CD9F6980065A93D /* CocoaMQTT.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4CCD2CB11CD9FEF20065A93D /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCD2C981CD9EC9C0065A93D /* SwiftDate.framework */; };
+		4CCD2CB21CD9FEF20065A93D /* SwiftDate.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCD2C981CD9EC9C0065A93D /* SwiftDate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4CCD2CB51CD9FF1F0065A93D /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCD2CB31CD9FF1F0065A93D /* CocoaAsyncSocket.framework */; };
+		4CCD2CB61CD9FF1F0065A93D /* MSWeakTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCD2CB41CD9FF1F0065A93D /* MSWeakTimer.framework */; };
+		4CCD2CB71CD9FF2B0065A93D /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCD2CB31CD9FF1F0065A93D /* CocoaAsyncSocket.framework */; };
+		4CCD2CB81CD9FF2B0065A93D /* CocoaAsyncSocket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCD2CB31CD9FF1F0065A93D /* CocoaAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4CCD2CB91CD9FF2B0065A93D /* MSWeakTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCD2CB41CD9FF1F0065A93D /* MSWeakTimer.framework */; };
+		4CCD2CBA1CD9FF2B0065A93D /* MSWeakTimer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCD2CB41CD9FF1F0065A93D /* MSWeakTimer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4CCD2CBD1CDA11AB0065A93D /* Config.swift.sample in Sources */ = {isa = PBXBuildFile; fileRef = 4CCD2CBC1CDA11AB0065A93D /* Config.swift.sample */; };
 		4CE297D41C243F3900AFFE88 /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE297D31C243F3900AFFE88 /* NSDateExtension.swift */; };
 		4CEF31321C400AEA0095734E /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEF31311C400AEA0095734E /* NotificationManager.swift */; };
 /* End PBXBuildFile section */
@@ -59,7 +69,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				4C5BBE761C1B615D001B1A8D /* SwiftDate.framework in Embed Frameworks */,
+				4CCD2CB81CD9FF2B0065A93D /* CocoaAsyncSocket.framework in Embed Frameworks */,
+				4CCD2CB21CD9FEF20065A93D /* SwiftDate.framework in Embed Frameworks */,
+				4CCD2CBA1CD9FF2B0065A93D /* MSWeakTimer.framework in Embed Frameworks */,
+				4CCD2CB01CD9FE7C0065A93D /* CocoaMQTT.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -76,9 +89,7 @@
 		4C145A6B1C40523D0021BE5D /* dishwasher_ready.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = dishwasher_ready.aiff; sourceTree = "<group>"; };
 		4C145A6C1C40523D0021BE5D /* dishwasher_reset.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = dishwasher_reset.aiff; sourceTree = "<group>"; };
 		4C5BBE711C1B441B001B1A8D /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		4C5BBE731C1B60A1001B1A8D /* SwiftDate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftDate.framework; path = HomeSensor/SwiftDate.framework; sourceTree = "<group>"; };
 		4C6434331C20915D002E557E /* SensorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorTableViewCell.swift; sourceTree = "<group>"; };
-		4C6434351C209637002E557E /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		4CA489591C402F540018836D /* MQTTManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQTTManager.swift; sourceTree = "<group>"; };
 		4CB79C681C12094200514E27 /* HomeSensor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeSensor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CB79C6B1C12094200514E27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,11 +103,15 @@
 		4CB79C871C12094200514E27 /* HomeSensorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeSensorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CB79C8B1C12094200514E27 /* HomeSensorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSensorUITests.swift; sourceTree = "<group>"; };
 		4CB79C8D1C12094200514E27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4CB79CAB1C1215D100514E27 /* MQTTClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MQTTClient.framework; sourceTree = "<group>"; };
-		4CB79CAE1C12166200514E27 /* HomeSensor-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomeSensor-Bridging-Header.h"; sourceTree = "<group>"; };
 		4CB79CB11C121A5A00514E27 /* SensorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorManager.swift; sourceTree = "<group>"; };
 		4CB79CB31C121CFE00514E27 /* Sensor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
 		4CB79CB51C121D0400514E27 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		4CCD2C961CD9EA8B0065A93D /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		4CCD2C981CD9EC9C0065A93D /* SwiftDate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftDate.framework; path = Audio/SwiftDate.framework; sourceTree = "<group>"; };
+		4CCD2CAA1CD9F6980065A93D /* CocoaMQTT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaMQTT.framework; path = Carthage/Build/iOS/CocoaMQTT.framework; sourceTree = "<group>"; };
+		4CCD2CB31CD9FF1F0065A93D /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = Carthage/Build/iOS/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
+		4CCD2CB41CD9FF1F0065A93D /* MSWeakTimer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MSWeakTimer.framework; path = Carthage/Build/iOS/MSWeakTimer.framework; sourceTree = "<group>"; };
+		4CCD2CBC1CDA11AB0065A93D /* Config.swift.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Config.swift.sample; sourceTree = "<group>"; };
 		4CE297D31C243F3900AFFE88 /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
 		4CEF31311C400AEA0095734E /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,8 +121,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C5BBE741C1B60A1001B1A8D /* SwiftDate.framework in Frameworks */,
-				4CB79CAC1C1215D100514E27 /* MQTTClient.framework in Frameworks */,
+				4CCD2CB71CD9FF2B0065A93D /* CocoaAsyncSocket.framework in Frameworks */,
+				4CCD2CAB1CD9F6980065A93D /* CocoaMQTT.framework in Frameworks */,
+				4CCD2CB91CD9FF2B0065A93D /* MSWeakTimer.framework in Frameworks */,
+				4CCD2C991CD9EC9C0065A93D /* SwiftDate.framework in Frameworks */,
+				4CCD2CB51CD9FF1F0065A93D /* CocoaAsyncSocket.framework in Frameworks */,
+				4CCD2CB11CD9FEF20065A93D /* SwiftDate.framework in Frameworks */,
+				4CCD2CB61CD9FF1F0065A93D /* MSWeakTimer.framework in Frameworks */,
+				4CCD2CAF1CD9FE7C0065A93D /* CocoaMQTT.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,13 +167,15 @@
 		4CB79C5F1C12094200514E27 = {
 			isa = PBXGroup;
 			children = (
+				4CCD2CB31CD9FF1F0065A93D /* CocoaAsyncSocket.framework */,
+				4CCD2CB41CD9FF1F0065A93D /* MSWeakTimer.framework */,
 				4CB79C6A1C12094200514E27 /* HomeSensor */,
 				4CB79C7F1C12094200514E27 /* HomeSensorTests */,
 				4CB79C8A1C12094200514E27 /* HomeSensorUITests */,
 				4CB79C691C12094200514E27 /* Products */,
 				4C145A641C40523D0021BE5D /* Audio */,
-				4C5BBE731C1B60A1001B1A8D /* SwiftDate.framework */,
-				4CB79CAB1C1215D100514E27 /* MQTTClient.framework */,
+				4CCD2C981CD9EC9C0065A93D /* SwiftDate.framework */,
+				4CCD2CAA1CD9F6980065A93D /* CocoaMQTT.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -174,7 +197,6 @@
 				4CB79C721C12094200514E27 /* Assets.xcassets */,
 				4CB79C741C12094200514E27 /* LaunchScreen.storyboard */,
 				4CB79C771C12094200514E27 /* Info.plist */,
-				4CB79CAE1C12166200514E27 /* HomeSensor-Bridging-Header.h */,
 				4CB79CB11C121A5A00514E27 /* SensorManager.swift */,
 				4CA489591C402F540018836D /* MQTTManager.swift */,
 				4CEF31311C400AEA0095734E /* NotificationManager.swift */,
@@ -182,7 +204,8 @@
 				4CB79CB51C121D0400514E27 /* Device.swift */,
 				4C5BBE711C1B441B001B1A8D /* TableViewController.swift */,
 				4C6434331C20915D002E557E /* SensorTableViewCell.swift */,
-				4C6434351C209637002E557E /* Config.swift */,
+				4CCD2C961CD9EA8B0065A93D /* Config.swift */,
+				4CCD2CBC1CDA11AB0065A93D /* Config.swift.sample */,
 				4CE297D31C243F3900AFFE88 /* NSDateExtension.swift */,
 			);
 			path = HomeSensor;
@@ -354,12 +377,13 @@
 			files = (
 				4C5BBE721C1B441B001B1A8D /* TableViewController.swift in Sources */,
 				4C6434341C20915D002E557E /* SensorTableViewCell.swift in Sources */,
+				4CCD2CBD1CDA11AB0065A93D /* Config.swift.sample in Sources */,
 				4CB79CB41C121CFE00514E27 /* Sensor.swift in Sources */,
 				4CEF31321C400AEA0095734E /* NotificationManager.swift in Sources */,
-				4C6434361C209637002E557E /* Config.swift in Sources */,
 				4CE297D41C243F3900AFFE88 /* NSDateExtension.swift in Sources */,
 				4CB79CB21C121A5A00514E27 /* SensorManager.swift in Sources */,
 				4CB79C6C1C12094200514E27 /* AppDelegate.swift in Sources */,
+				4CCD2C971CD9EA8B0065A93D /* Config.swift in Sources */,
 				4CB79CB61C121D0400514E27 /* Device.swift in Sources */,
 				4CA4895A1C402F540018836D /* MQTTManager.swift in Sources */,
 			);
@@ -510,13 +534,14 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/HomeSensor",
+					"$(PROJECT_DIR)/Audio",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = HomeSensor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nl.xonaymedia.homesensor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "HomeSensor/HomeSensor-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -532,13 +557,14 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/HomeSensor",
+					"$(PROJECT_DIR)/Audio",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = HomeSensor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nl.xonaymedia.homesensor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "HomeSensor/HomeSensor-Bridging-Header.h";
 			};
 			name = Release;
 		};

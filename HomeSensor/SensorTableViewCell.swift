@@ -101,7 +101,7 @@ class SensorTableViewCell: UITableViewCell {
 			timestampLabel.hidden = true
 		}
 		
-		timestampUpdateTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "updateTimestampLabel", userInfo: nil, repeats: false)
+		timestampUpdateTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(SensorTableViewCell.updateTimestampLabel), userInfo: nil, repeats: false)
 	}
 
 }

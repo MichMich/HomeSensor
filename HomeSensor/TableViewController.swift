@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TableViewController: UITableViewController, SensorManagerDelegateProtocol {
+class TableViewController: UITableViewController, SensorManagerDelegateProtocol, MQTTManagerDelegate {
 	
 	let sensorManager = SensorManager.sharedInstance
 	let mqttManager = MQTTManager.sharedInstance
@@ -21,7 +21,9 @@ class TableViewController: UITableViewController, SensorManagerDelegateProtocol 
 		print("Table view controller loaded.")
 
 		sensorManager.delegate = self
-		
+        mqttManager.delegate = self
+        
+        
 		let alarm = Device(name: "Alarm", identifier: "alarm", forSensorManager: SensorManager.sharedInstance)
 		
 		alarm.addSensor(Sensor(name: "Door", identifier: "door"))
@@ -33,21 +35,24 @@ class TableViewController: UITableViewController, SensorManagerDelegateProtocol 
 		let dishwasher = Device(name: "Dishwasher", identifier: "dishwasher", forSensorManager: SensorManager.sharedInstance)
 		
 		dishwasher.addSensor(Sensor(name: "Ready", identifier: "ready"))
-		
-		mqttManager.mqttSession.addObserver(self, forKeyPath: "status", options: NSKeyValueObservingOptions.New, context: nil)
-		
-		// footerUpdateTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "updateConnectionDetails", userInfo: nil, repeats: true)
+        
     }
 
 	override func viewWillAppear(animated: Bool) {
 		super.viewWillAppear(animated)
+        mqttManager.connect()
 	}
 
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+        
+        if (!mqttManager.connected) {
+            return 0
+        }
+        
         return sensorManager.devices.count
+        
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -116,28 +121,11 @@ class TableViewController: UITableViewController, SensorManagerDelegateProtocol 
 		}
 	}
 	
-	override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-		
-		var statusString = "Unknown"
-		
-		switch mqttManager.mqttSession.status {
-			case .Created:
-				statusString = "Created"
-			case .Connecting:
-				statusString = "Connecting"
-			case .Connected:
-				statusString = "Connected"
-			case .Disconnecting:
-				statusString = "Disconnecting"
-			case .Closed:
-				statusString = "Closed"
-			case .Error:
-				statusString = "Error"
-		}
-		
-		print("Connection status: ", statusString)
-		
-		title = "HomeSensor \(statusString)"
+	func updateConnectionState() {
+        title = "HomeSensor \(mqttManager.connected ? "Connected" : "Disconnected")"
+        
+        tableView.reloadData()
+        
 	}
 
 }
@@ -168,4 +156,11 @@ extension TableViewController {
 	func sensorManagerDeviceSensorNotificationSubscriptionChanged(sensorManager: SensorManager, device: Device, sensor: Sensor, notificationType: NotificationType) {
 		reloadSensor(sensor)
 	}
+}
+
+// MARK: MQTTManagerDelegate Methods
+extension TableViewController {
+    func mqttManagerConnectionChanged(mqttManager: MQTTManager) {
+        updateConnectionState()
+    }
 }

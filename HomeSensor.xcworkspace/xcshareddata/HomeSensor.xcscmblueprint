@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "2BD49E3E7FE764D87D522A96153A27979A3D70BF",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "056959F1DBA0EDF39021D95A2DDF2CEFF637136D" : 0,
+    "2BD49E3E7FE764D87D522A96153A27979A3D70BF" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "1070CB7D-37FD-4635-858B-9872D1A0B830",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "056959F1DBA0EDF39021D95A2DDF2CEFF637136D" : "..\/..\/Desktop\/Moscapsule",
+    "2BD49E3E7FE764D87D522A96153A27979A3D70BF" : "HomeSensor\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "HomeSensor",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "HomeSensor.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/flightonary\/Moscapsule.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "056959F1DBA0EDF39021D95A2DDF2CEFF637136D"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/MichMich\/HomeSensor.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2BD49E3E7FE764D87D522A96153A27979A3D70BF"
+    }
+  ]
+}

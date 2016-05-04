@@ -1,2 +1,4 @@
-github "ckrey/MQTT-Client-Framework" "0.5.0"
-github "malcommac/SwiftDate" "2.0.2"
+github "robbiehanson/CocoaAsyncSocket" "562bae6af6dbd7e1891293dae20b9f79a2fd7228"
+github "emqtt/CocoaMQTT" "a7337965aef6c72ad98e6d45a5cbe6d718e65fb5"
+github "CrazyWisdom/MSWeakTimer" "8662f28ccbc96fff28aa9ad148eb2d89384adc05"
+github "malcommac/SwiftDate" "3.0.9"

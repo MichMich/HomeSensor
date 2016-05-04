@@ -80,27 +80,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			}
 		}
 		
-		
-//		NSLog(@"%@",userInfo);
-//		
-//		NSString *sound = [userInfo valueForKeyPath:@"aps.sound"];
-//		
-//		NSURL *soundURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@", [[NSBundle mainBundle] resourcePath], sound]];
-//		
-//		NSLog(@"%@", soundURL);
-//		
-//		NSError *error;
-//		self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:&error];
-//		[self.audioPlayer play];
-//		
-//		
-//		
-//		NSString *message = [userInfo valueForKeyPath:@"aps.alert"];
-//		
-//		[[[UIAlertView alloc] initWithTitle: message message:nil delegate: nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-//		
-//		
-		
+	
 		
 	}
 }
